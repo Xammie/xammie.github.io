@@ -18,7 +18,7 @@ export default function Home() {
                                 Hey, I'm Max
                             </h1>
                             <div className="text-gray-100 text-lg lg:text-2xl">
-                                Fullstack developer
+                                Fullstack Developer
                             </div>
                         </div>
                     </div>
