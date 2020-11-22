@@ -8,7 +8,7 @@ module.exports = {
         {
             resolve: `gatsby-plugin-typescript`,
             options: {
-                isTSX: true,
+                isTSX:         true,
                 allExtensions: true,
             },
         },
@@ -24,14 +24,14 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `Max's Portfolio`,
-                short_name: `Max`,
-                start_url: `/`,
-                lang: `en`,
+                name:             `Max's Portfolio`,
+                short_name:       `Max`,
+                start_url:        `/`,
+                lang:             `en`,
                 background_color: `#fff`,
-                theme_color: `#1a202c`,
-                display: `standalone`,
-                icon: `src/img/icon.png`,
+                theme_color:      `rgb(17, 24, 39)`,
+                display:          `standalone`,
+                icon:             `src/img/icon.png`,
             },
         },
         `gatsby-plugin-offline`,
@@ -50,9 +50,9 @@ module.exports = {
                 // your google analytics tracking id
                 trackingId: `UA-181396331-1`,
                 // Puts tracking script in the head instead of the body
-                head: false,
+                head:       false,
                 // enable ip anonymization
-                anonymize: true,
+                anonymize:  true,
             },
         },
     ],

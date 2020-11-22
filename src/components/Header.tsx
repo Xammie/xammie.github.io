@@ -8,12 +8,12 @@ export default function Header() {
         <div className="fixed z-20 right-0 flex p-2 flex-row items-center justify-end">
             <OutboundLink title="My Github Profile"
                           href="https://github.com/Xammie"
-                          className="p-2 hover:bg-gray-900 rounded transition transition-colors duration-100">
+                          className="flex-center w-10 h-10 rounded transition transition-colors duration-100 hover:bg-blue-900 focus:bg-gray-900 focus:ring-4 focus:ring-blue-700">
                 <Github className="h-6"/>
             </OutboundLink>
             <OutboundLink title="My LinkedIn Profile"
                           href="https://www.linkedin.com/in/maxhoogenbosch/"
-                          className="p-2 hover:bg-gray-900 rounded transition transition-colors duration-100">
+                          className="flex-center w-10 h-10 rounded transition transition-colors duration-100 hover:bg-blue-900 focus:bg-gray-900 focus:ring-4 focus:ring-blue-700">
                 <Linkedin className="h-6"/>
             </OutboundLink>
         </div>
