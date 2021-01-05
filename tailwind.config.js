@@ -1,3 +1,8 @@
 module.exports = {
-    purge: ["./src/**/*.tsx"],
+    purge: ['./src/**/*.tsx'],
+    theme: {
+        container: {
+            center: true,
+        },
+    },
 }

@@ -1,0 +1,41 @@
+import React from "react"
+import Layout from "../components/Layout";
+import Container from "../components/Container";
+import BlogList from "../components/BlogList";
+import {graphql} from "gatsby";
+import Header from "../components/Header";
+
+export default function Blog({data}) {
+    return (
+        <Layout>
+            <Container className="min-h-screen max-w-screen-md p-5">
+                <Header/>
+                <BlogList data={data.blogs}/>
+            </Container>
+        </Layout>
+    );
+}
+
+export const pageQuery = graphql`
+    {
+        blogs: allFile(
+            filter: {sourceInstanceName: {eq: "blog"}, ext: {eq: ".md"}},
+            sort: {order: DESC, fields: childMarkdownRemark___frontmatter___date}
+        ) {
+            nodes {
+                remark: childMarkdownRemark {
+                    excerpt(pruneLength: 150)
+                    frontmatter {
+                        date(formatString: "MMMM DD, YYYY")
+                        slug
+                        title
+                        tags
+                    }
+                }
+            }
+            pageInfo {
+                hasNextPage
+            }
+        }
+    }
+`

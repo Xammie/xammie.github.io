@@ -1,14 +1,9 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/gatsby-config/
- */
 module.exports = {
     plugins: [
         {
             resolve: `gatsby-plugin-typescript`,
             options: {
-                isTSX:         true,
+                isTSX: true,
                 allExtensions: true,
             },
         },
@@ -24,22 +19,37 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name:             `Max's Portfolio`,
-                short_name:       `Max`,
-                start_url:        `/`,
-                lang:             `en`,
+                name: `Max Hoogenbosch`,
+                short_name: `Max`,
+                start_url: `/`,
+                lang: `en`,
                 background_color: `#fff`,
-                theme_color:      `rgb(17, 24, 39)`,
-                display:          `standalone`,
-                icon:             `src/img/icon.png`,
+                theme_color: `rgb(17, 24, 39)`,
+                display: `standalone`,
+                icon: `src/img/icon.png`,
             },
         },
         `gatsby-plugin-offline`,
+        `gatsby-transformer-json`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `img`,
                 path: `${__dirname}/src/img/`
+            }
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `blog`,
+                path: `${__dirname}/src/blog/`
+            }
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `projects`,
+                path: `${__dirname}/src/projects/`
             }
         },
         `gatsby-transformer-sharp`,
@@ -50,10 +60,19 @@ module.exports = {
                 // your google analytics tracking id
                 trackingId: `UA-181396331-1`,
                 // Puts tracking script in the head instead of the body
-                head:       false,
+                head: false,
                 // enable ip anonymization
-                anonymize:  true,
+                anonymize: true,
             },
         },
+        `gatsby-transformer-remark`,
+        {
+            resolve: `gatsby-plugin-nprogress`,
+            options: {
+                color: `red`,
+                showSpinner: false,
+            },
+        },
+        `gatsby-plugin-react-helmet`,
     ],
 }
