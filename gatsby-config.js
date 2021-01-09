@@ -1,4 +1,7 @@
 module.exports = {
+    siteMetadata: {
+        siteUrl: `https://hoogenbos.ch`,
+    },
     plugins: [
         {
             resolve: `gatsby-plugin-typescript`,
@@ -74,5 +77,6 @@ module.exports = {
             },
         },
         `gatsby-plugin-react-helmet`,
+        `gatsby-plugin-sitemap`,
     ],
 }

@@ -1,5 +1,5 @@
 {
-  "name": "xammie.github.io",
+  "name": "hoogenbos.ch",
   "private": true,
   "description": "Personal website",
   "version": "0.0.1",
@@ -18,7 +18,7 @@
   "dependencies": {
     "@react-hook/window-size": "^3.0.7",
     "@svgr/webpack": "^5.5.0",
-    "@tailwindcss/postcss7-compat": "^2.0.2",
+    "@tailwindcss/postcss7-compat": "npm:@tailwindcss/postcss7-compat",
     "autoprefixer": "^9",
     "classnames": "^2.2.6",
     "framer-motion": "^2.9.4",
@@ -32,7 +32,9 @@
     "gatsby-plugin-react-helmet": "^3.7.0",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sharp": "^2.9.0",
+    "gatsby-plugin-sitemap": "^2.10.0",
     "gatsby-plugin-typescript": "^2.7.0",
+    "gatsby-remark-images": "^3.9.0",
     "gatsby-source-filesystem": "^2.6.1",
     "gatsby-transformer-json": "^2.6.0",
     "gatsby-transformer-remark": "^2.12.0",
