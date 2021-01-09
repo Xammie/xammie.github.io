@@ -4,6 +4,7 @@ import Container from "../components/Container";
 import BlogList from "../components/BlogList";
 import {graphql} from "gatsby";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function Blog({data}) {
     return (
@@ -11,6 +12,7 @@ export default function Blog({data}) {
             <Container className="min-h-screen max-w-screen-md p-5">
                 <Header/>
                 <BlogList data={data.blogs}/>
+                <Footer/>
             </Container>
         </Layout>
     );

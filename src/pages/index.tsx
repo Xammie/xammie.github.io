@@ -10,6 +10,7 @@ import BlogList from "../components/BlogList";
 import {graphql} from "gatsby";
 import Projects from "../components/Projects";
 import Stack from "../components/Stack";
+import Footer from "../components/Footer";
 
 export default function Home({data}) {
     return (
@@ -45,6 +46,7 @@ export default function Home({data}) {
                 <Stack/>
                 <BlogList data={data.blogs}/>
                 <Projects items={data.projects.nodes}/>
+                <Footer/>
             </Container>
         </Layout>
     );
