@@ -10,6 +10,7 @@ import BlogList from "../components/BlogList";
 import {graphql} from "gatsby";
 import Projects from "../components/Projects";
 import Stack from "../components/Stack";
+import Enrise from "../img/enrise.svg";
 import Footer from "../components/Footer";
 
 export default function Home({data}) {
@@ -18,17 +19,20 @@ export default function Home({data}) {
             <Container className="min-h-screen max-w-screen-md p-5">
                 <Card className="flex flex-col md:rounded-full">
                     <div className="flex flex-col md:flex-row items-center">
-                        <Profile className="h-16 w-16 sm:h-32 sm:w-32 md:h-48 md:w-48"/>
-                        <div className="flex-grow">
-                            <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-bold mb-3 md:mb-5 text-center">
+                        <Profile className="h-32 w-32 md:h-48 md:w-48"/>
+                        <div className="flex-grow px-5">
+                            <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-bold text-center md:text-left"
+                                style={{textShadow: "#ff0000bf 4px -4px 4px, blue -4px 4px 4px"}}>
                                 Hey, I'm Max
                             </h1>
-                            <div className="text-lg md:text-2xl font-bold mb-3 md:mb-5 text-center">
-                                <span className="bg-white text-gray-900 p-1">
-                                    Fullstack Developer
-                                </span>
+                            <div className="flex items-center text-xl md:text-2xl">
+                                Full Stack developer at
+                                <a href="https://enrise.com" target="_blank"
+                                   className="block md:inline-block h-12 p-2 mx-1 rounded hover:bg-blue-900 focus:bg-blue-900 focus:ring-4 ring-blue-700">
+                                    <Enrise width={null} height="100%"/>
+                                </a>
                             </div>
-                            <div className="flex-center">
+                            <div className="flex">
                                 <OutboundLink title="My Github Profile"
                                               href="https://github.com/Xammie"
                                               className="flex-center w-12 h-12 rounded transition transition-colors duration-100 hover:bg-blue-900 focus:bg-blue-900 focus:bg-gray-900 focus:ring-4 focus:ring-blue-700">

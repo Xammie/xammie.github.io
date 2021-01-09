@@ -8,7 +8,7 @@ export default function Layout({children}) {
                     titleTemplate="%s - Max Hoogenbosch">
                 <html lang="en"/>
                 <meta charSet="utf-8"/>
-                <meta name="description" content="Fullstack developer from the Netherlands"/>
+                <meta name="description" content="Full Stack Developer at Enrise"/>
                 <meta name="theme-color" content="#1a202c"/>
             </Helmet>
             {children}

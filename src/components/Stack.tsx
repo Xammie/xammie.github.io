@@ -7,9 +7,6 @@ import ReactIcon from "../img/react-icon.svg";
 export default function Stack() {
     return (
         <Card>
-            <div className="leading-relaxed text-lg">
-                I'm a fullstack developer from the Netherlands working at Enrise.
-            </div>
             <h2 className="title text-2xl mb-3">
                 I enjoy working with
             </h2>
