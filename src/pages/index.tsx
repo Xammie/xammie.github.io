@@ -47,8 +47,9 @@ export default function Home({data}) {
                         </div>
                     </div>
                 </Card>
-                <Stack/>
-                <BlogList data={data.blogs}/>
+                {/*<Stack/>*/}
+                <BlogList title="Recent blog posts"
+                          data={data.blogs}/>
                 <Projects items={data.projects.nodes}/>
                 <Footer/>
             </Container>
