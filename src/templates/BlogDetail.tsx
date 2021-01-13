@@ -4,7 +4,7 @@ import Container from "../components/Container";
 import Card from "../components/Card";
 import Layout from "../components/Layout";
 import {Helmet} from "react-helmet";
-import BlogList from "../components/BlogList";
+import List from "../components/Blog/List";
 import Header from "../components/Header";
 import Tags from "../components/Tags";
 import Footer from "../components/Footer";
@@ -36,7 +36,7 @@ export default function BlogDetail({data}) {
                         <Tags tags={frontmatter.tags}/>
                     </div>}
                 </Card>
-                {data.blogs.nodes.length > 0 && <BlogList title="Other blogs" data={data.blogs}/>}
+                {data.blogs.nodes.length > 0 && <List title="Other blogs" data={data.blogs}/>}
                 <Footer/>
             </Container>
         </Layout>

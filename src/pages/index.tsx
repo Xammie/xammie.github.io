@@ -6,7 +6,7 @@ import {OutboundLink} from "gatsby-plugin-gtag";
 import Github from "../img/github.svg";
 import Linkedin from "../img/linkedin.svg";
 import Card from "../components/Card";
-import BlogList from "../components/BlogList";
+import List from "../components/Blog/List";
 import {graphql} from "gatsby";
 import Projects from "../components/Projects";
 import Stack from "../components/Stack";
@@ -19,8 +19,8 @@ export default function Home({data}) {
         <Layout>
             <Container className="min-h-screen max-w-screen-md p-5">
                 <About/>
-                <BlogList title="Recent blog posts"
-                          data={data.blogs}/>
+                <List title="Recent blog posts"
+                      data={data.blogs}/>
                 <Projects items={data.projects.nodes}/>
                 <Footer/>
             </Container>

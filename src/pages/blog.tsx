@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout";
 import Container from "../components/Container";
-import BlogList from "../components/BlogList";
+import List from "../components/Blog/List";
 import {graphql} from "gatsby";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -11,7 +11,7 @@ export default function Blog({data}) {
         <Layout>
             <Container className="min-h-screen max-w-screen-md p-5">
                 <Header/>
-                <BlogList data={data.blogs}/>
+                <List data={data.blogs}/>
                 <Footer/>
             </Container>
         </Layout>
