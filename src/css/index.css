@@ -64,7 +64,7 @@
 }
 
 .markdown p,
-.markdown pre > code {
+.markdown .gatsby-highlight {
     @apply mb-4;
 }
 
@@ -128,4 +128,16 @@
 
 .markdown > *:last-child {
     @apply mb-0;
+}
+
+.markdown img {
+    @apply rounded shadow-md;
+}
+
+.markdown figcaption {
+    @apply text-center;
+}
+
+.markdown .gatsby-resp-image-wrapper {
+    max-width: none;
 }
