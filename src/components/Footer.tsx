@@ -1,7 +1,7 @@
-import {OutboundLink} from "gatsby-plugin-gtag";
 import Github from "../img/github.svg";
 import Linkedin from "../img/linkedin.svg";
 import React from "react";
+import Icon from "./Icon";
 
 export default function Footer() {
     return (
@@ -10,16 +10,14 @@ export default function Footer() {
                 &copy; {new Date().getFullYear()} Max Hoogenbosch
             </div>
             <div className="flex">
-                <OutboundLink title="My Github Profile"
-                              href="https://github.com/Xammie"
-                              className="flex-center w-12 h-12 rounded transition transition-colors duration-100 hover:bg-blue-900 focus:bg-blue-900 focus:bg-gray-900 focus:ring-4 focus:ring-blue-700">
+                <Icon title="My Github Profile"
+                      href="https://github.com/Xammie">
                     <Github className="h-8"/>
-                </OutboundLink>
-                <OutboundLink title="My LinkedIn Profile"
-                              href="https://www.linkedin.com/in/maxhoogenbosch/"
-                              className="flex-center w-12 h-12 rounded transition transition-colors duration-100 hover:bg-blue-900 focus:bg-blue-900 focus:bg-gray-900 focus:ring-4 focus:ring-blue-700">
+                </Icon>
+                <Icon title="My LinkedIn Profile"
+                      href="https://www.linkedin.com/in/maxhoogenbosch/">
                     <Linkedin className="h-8"/>
-                </OutboundLink>
+                </Icon>
             </div>
         </div>
     );
