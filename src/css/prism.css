@@ -470,7 +470,7 @@ pre[class*="language-"]
 
 .token.variable
 {
-    color: var(--comment);
+    color: #fff;
 }
 
 .token.number
