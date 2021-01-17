@@ -80,7 +80,7 @@ module.exports = {
                             // base for generating different widths of each image.
                             backgroundColor: 'transparent',
                             withWebp: true,
-                            showCaptions: true,
+                            showCaptions: false,
                         },
                     },
                     {

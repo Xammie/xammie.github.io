@@ -1,16 +1,8 @@
 import React from "react"
 import Layout from "../components/Layout";
-import Profile from "../components/Profile";
 import Container from "../components/Container";
-import {OutboundLink} from "gatsby-plugin-gtag";
-import Github from "../img/github.svg";
-import Linkedin from "../img/linkedin.svg";
-import Card from "../components/Card";
 import List from "../components/Blog/List";
 import {graphql} from "gatsby";
-import Projects from "../components/Projects";
-import Stack from "../components/Stack";
-import Enrise from "../img/enrise.svg";
 import Footer from "../components/Footer";
 import About from "../components/About";
 
@@ -21,7 +13,6 @@ export default function Home({data}) {
                 <About/>
                 <List title="Recent blog posts"
                       data={data.blogs}/>
-                <Projects items={data.projects.nodes}/>
                 <Footer/>
             </Container>
         </Layout>
@@ -48,18 +39,6 @@ export const pageQuery = graphql`
             }
             pageInfo {
                 hasNextPage
-            }
-        }
-        projects: allProjectsJson(sort: {fields: index}, limit: 1) {
-            nodes {
-                title
-                image {
-                    childImageSharp {
-                        fluid(maxWidth: 500, maxHeight: 350, cropFocus: CENTER, toFormat: JPG) {
-                            ...GatsbyImageSharpFluid_withWebp
-                        }
-                    }
-                }
             }
         }
     }
