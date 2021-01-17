@@ -10,7 +10,7 @@ import Tags from "../components/Tags";
 import Footer from "../components/Footer";
 
 export default function BlogDetail({data}) {
-    const {frontmatter, html, excerpt} = data.blog.remark;
+    const {frontmatter, html, excerpt, fields} = data.blog.remark;
 
     return (
         <Layout>
@@ -24,8 +24,12 @@ export default function BlogDetail({data}) {
                     <h1 className="title text-3xl">
                         {frontmatter.title}
                     </h1>
-                    <div className="mb-4 text-sm">
-                        {frontmatter.date}
+                    <div className="mb-4 text-sm flex">
+                        <div>{frontmatter.date}</div>
+                        &nbsp;
+                        -
+                        &nbsp;
+                        <div>{fields.readingTime.text}</div>
                     </div>
                     <article className="markdown"
                              dangerouslySetInnerHTML={{__html: html}}/>
@@ -54,6 +58,11 @@ export const pageQuery = graphql`
                     slug
                     title
                     tags
+                }
+                fields {
+                    readingTime {
+                        text
+                    }
                 }
             }
         }

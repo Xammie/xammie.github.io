@@ -148,6 +148,7 @@ module.exports = {
                             escapeEntities: {},
                         },
                     },
+                    `gatsby-remark-reading-time`,
                 ],
             },
         },
