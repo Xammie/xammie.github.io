@@ -11,7 +11,7 @@ export default function NotFound() {
                 <title>Page not found</title>
             </Helmet>
             <Container className="flex-center flex-col">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl py-3 z-10 overflow-visible title">
+                <h1 className="font-bold text-4xl sm:text-5xl md:text-6xl py-3 z-10 overflow-visible">
                     Page not found
                 </h1>
                 <Button to="/">

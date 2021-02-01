@@ -3,7 +3,7 @@ import {Helmet} from "react-helmet";
 
 export default function Layout({children}) {
     return (
-        <div className="min-h-screen bg-blue-600 text-white relative">
+        <div className="min-h-screen bg-background relative">
             <Helmet defaultTitle="Max Hoogenbosch"
                     titleTemplate="%s - Max Hoogenbosch">
                 <html lang="en"/>

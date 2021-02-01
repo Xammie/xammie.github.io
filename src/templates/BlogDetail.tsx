@@ -8,6 +8,7 @@ import List from "../components/Blog/List";
 import Header from "../components/Header";
 import Tags from "../components/Tags";
 import Footer from "../components/Footer";
+import Divider from "../components/Divider";
 
 export default function BlogDetail({data}) {
     const {frontmatter, html, excerpt, fields} = data.blog.remark;
@@ -18,29 +19,28 @@ export default function BlogDetail({data}) {
                 <title>{frontmatter.title}</title>
                 <meta name="description" content={excerpt}/>
             </Helmet>
-            <Container>
-                <Header/>
-                <Card>
-                    <h1 className="title text-3xl">
-                        {frontmatter.title}
-                    </h1>
-                    <div className="mb-4 text-sm flex">
-                        <div>{frontmatter.date}</div>
-                        &nbsp;
-                        -
-                        &nbsp;
-                        <div>{fields.readingTime.text}</div>
-                    </div>
-                    <article className="markdown"
-                             dangerouslySetInnerHTML={{__html: html}}/>
-                    {frontmatter.tags.length > 0 &&
-                    <div className="flex justify-start mt-4">
-                        Tags:
-                        &nbsp;
-                        <Tags tags={frontmatter.tags}/>
-                    </div>}
-                </Card>
-                {data.blogs.nodes.length > 0 && <List title="Other blogs" data={data.blogs}/>}
+            <Container className="flex flex-col justify-between">
+                <div>
+                    <Header/>
+                    <Card>
+                        <div className="text-sm flex flex-wrap items-center">
+                            <div className="whitespace-nowrap py-1 md:py-0">{frontmatter.date}</div>
+                            <Divider/>
+                            <div className="whitespace-nowrap py-1 md:py-0">{fields.readingTime.text}</div>
+                            {frontmatter.tags.length > 0 &&
+                            <>
+                                <Divider/>
+                                <Tags tags={frontmatter.tags}/>
+                            </>}
+                        </div>
+                        <h1 className="font-bold text-2xl md:text-3xl my-4">
+                            {frontmatter.title}
+                        </h1>
+                        <article className="markdown"
+                                 dangerouslySetInnerHTML={{__html: html}}/>
+                    </Card>
+                    {data.blogs.nodes.length > 0 && <List title="Other blogs" data={data.blogs}/>}
+                </div>
                 <Footer/>
             </Container>
         </Layout>
@@ -54,7 +54,7 @@ export const pageQuery = graphql`
                 html
                 excerpt(pruneLength: 100)
                 frontmatter {
-                    date(formatString: "MMMM DD, YYYY")
+                    date(formatString: "MMMM D, YYYY")
                     slug
                     title
                     tags
@@ -68,7 +68,10 @@ export const pageQuery = graphql`
         }
         blogs: allFile(
             filter: {
-                childMarkdownRemark: {frontmatter: {slug: {ne: $slug}}}
+                childMarkdownRemark: {frontmatter: {
+                    publish: {eq: true}
+                    slug: {ne: $slug}
+                }}
                 sourceInstanceName: {eq: "blog"}
                 ext: {eq: ".md"}
             },
@@ -79,7 +82,7 @@ export const pageQuery = graphql`
                 remark: childMarkdownRemark {
                     excerpt(pruneLength: 150)
                     frontmatter {
-                        date(formatString: "MMMM DD, YYYY")
+                        date(formatString: "MMMM D, YYYY")
                         slug
                         title
                         tags

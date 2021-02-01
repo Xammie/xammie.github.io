@@ -26,7 +26,7 @@ export const parameters = {
         values: [
             {
                 name: 'default',
-                value: '#2563eb',
+                value: '#121212',
             },
         ],
     },

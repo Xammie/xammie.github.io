@@ -9,10 +9,11 @@ import About from "../components/About";
 export default function Home({data}) {
     return (
         <Layout>
-            <Container className="min-h-screen max-w-screen-md p-5">
-                <About/>
-                <List title="Recent blog posts"
-                      data={data.blogs}/>
+            <Container className="flex flex-col justify-between">
+                <div>
+                    <About/>
+                    <List data={data.blogs}/>
+                </div>
                 <Footer/>
             </Container>
         </Layout>
@@ -22,9 +23,11 @@ export default function Home({data}) {
 export const pageQuery = graphql`
     {
         blogs: allFile(
-            filter: {sourceInstanceName: {eq: "blog"}, ext: {eq: ".md"}},
+            filter: {
+                sourceInstanceName: {eq: "blog"}, ext: {eq: ".md"}
+                childMarkdownRemark: {frontmatter: {publish: {eq: true}}}
+            },
             sort: {order: DESC, fields: childMarkdownRemark___frontmatter___date},
-            limit: 3
         ) {
             nodes {
                 remark: childMarkdownRemark {
@@ -32,7 +35,7 @@ export const pageQuery = graphql`
                     frontmatter {
                         title
                         slug
-                        date(formatString: "MMMM DD, YYYY")
+                        date(formatString: "MMMM D, YYYY")
                         tags
                     }
                 }

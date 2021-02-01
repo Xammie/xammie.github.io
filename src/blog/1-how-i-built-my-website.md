@@ -1,8 +1,9 @@
 ---
-title: "How I built my website"
-slug:  "/blog/how-i-built-my-website"
-date:  "2020-12-15"
-tags:  ["Gatsby", "React"]
+title:   "How I built my website"
+slug:    "/blog/how-i-built-my-website"
+date:    "2020-12-15"
+tags:    ["Gatsby", "React"]
+publish: false
 ---
 
 I had been wanting to create my own website for a long time. If you are reading this I have succeeded :). To make the
@@ -12,9 +13,9 @@ using [React](https://reactjs.org/) which I'm very familiar with.
 ## Embracing Gatsby
 
 I had some struggles when I started using Gatsby. The biggest one was that I was not familiar with GraphQL at all.
-Gatsby uses this to retrieve content like blogs or the site name. The query syntax looked a bit like what I remember
-from using MongoDB but there was a lot of syntax sugar that I did not understand at all. I was also struggling to find
-documentation about Gatsby.
+Gatsby uses this to retrieve content like blogs or the site name. It is not required but makes your life easier in the
+long run. The query syntax looked a bit like what I remember from using MongoDB but there was a lot of syntax sugar that
+I did not understand at all. I was also struggling to find documentation about Gatsby.
 
 I really started to see the power of Gatsby once I started `npm install`ing all kinds of Gatsby plugins. For example
 

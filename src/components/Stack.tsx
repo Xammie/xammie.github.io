@@ -7,7 +7,7 @@ import ReactIcon from "../img/react-icon.svg";
 export default function Stack() {
     return (
         <Card>
-            <h2 className="title text-2xl mb-3">
+            <h2 className="font-bold text-2xl mb-3">
                 I enjoy working with
             </h2>
             <div className="grid grid-cols-4 gap-3 md:gap-5">

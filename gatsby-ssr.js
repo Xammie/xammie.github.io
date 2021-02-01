@@ -1,8 +1,8 @@
 exports.onRenderBody = ({setBodyAttributes}) => {
     setBodyAttributes({
         style: {
-            backgroundColor: 'rgb(37, 99, 235)',
+            backgroundColor: '#121212',
         },
-        className: "text-white bg-blue-600",
+        className: "text-reading bg-background",
     });
 };
