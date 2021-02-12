@@ -19,7 +19,9 @@ export default function About() {
                         </h1>
                         <div className="flex items-center text-xl md:text-2xl nowrap">
                             Full stack developer at
-                            <a href="https://enrise.com" target="_blank"
+                            <a href="https://enrise.com"
+                               target="_blank"
+                               rel="noopener"
                                className="block md:inline h-12 p-2 mx-1 rounded clickable">
                                 <Enrise width={null} height="100%"/>
                             </a>

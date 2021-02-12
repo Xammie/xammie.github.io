@@ -5,10 +5,14 @@ import List from "../components/Blog/List";
 import {graphql} from "gatsby";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import {Helmet} from "react-helmet";
 
 export default function Blog({data}) {
     return (
         <Layout>
+            <Helmet>
+                <title>Blog</title>
+            </Helmet>
             <Container className="flex flex-col justify-between">
                 <div>
                     <Header/>
