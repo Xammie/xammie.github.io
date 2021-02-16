@@ -48,13 +48,6 @@ module.exports = {
                 path: `${__dirname}/src/blog/`
             }
         },
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                name: `projects`,
-                path: `${__dirname}/src/projects/`
-            }
-        },
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         {
