@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "scripts": {
     "build": "gatsby build",
-    "deploy": "yarn install && gatsby clean && gatsby build && gh-pages -d public",
+    "deploy": "yarn install && gatsby clean && gatsby build && build-storybook --output-dir ./public/storybook && gh-pages -d public",
     "develop": "gatsby develop",
     "production": "gatsby build && gatsby serve",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
