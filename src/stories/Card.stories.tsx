@@ -1,10 +1,13 @@
 import React from 'react';
-
 import Card from '../components/Card';
+import Container from "../components/Container";
 
 export default {
-    title: 'Card',
-    component: Card,
+    title: 'Hoogenbosch/Components/Card',
+    decorators: [(Story) => <Container><Story/></Container>],
+    parameters: {
+        layout: 'fullscreen',
+    },
     argTypes: {
         children: {
             name: 'Text',

@@ -5,7 +5,7 @@ export default function Icon({children, ...props}: any) {
     return (
         <OutboundLink
             {...props}
-            className="flex-center w-12 h-12 rounded clickable">
+            className="flex-center w-12 h-12 rounded-lg clickable">
             {children}
         </OutboundLink>
     );

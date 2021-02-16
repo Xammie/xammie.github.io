@@ -3,7 +3,7 @@ import Socials from "./Socials";
 
 export default function Footer() {
     return (
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col-reverse sm:flex-row justify-between items-center md:px-5">
             <div>
                 &copy; {new Date().getFullYear()} Max Hoogenbosch
             </div>

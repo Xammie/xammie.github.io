@@ -5,8 +5,11 @@ import List from "../components/Blog/List";
 import Container from "../components/Container";
 
 export default {
-    title: 'Blog',
-    decorators: [(Story) => <Container><Story/></Container>]
+    title: 'Hoogenbosch/Layout/Blog',
+    decorators: [(Story) => <Container><Story/></Container>],
+    parameters: {
+        layout: 'fullscreen',
+    }
 };
 
 const blogData = {

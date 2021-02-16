@@ -1,9 +1,11 @@
 import React from "react";
 import {Helmet} from "react-helmet";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Layout({children}) {
     return (
-        <div className="min-h-screen bg-background relative">
+        <div className="min-h-screen bg-gray-100 dark:bg-background relative"
+             style={{minHeight: '-webkit-fill-available'}}>
             <Helmet defaultTitle="Max Hoogenbosch"
                     titleTemplate="%s - Max Hoogenbosch">
                 <html lang="en"/>
@@ -12,6 +14,7 @@ export default function Layout({children}) {
                 <meta name="theme-color" content="#1a202c"/>
             </Helmet>
             {children}
+            <ThemeToggle/>
         </div>
     );
 }

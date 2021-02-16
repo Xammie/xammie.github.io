@@ -5,7 +5,7 @@ export default function Button({children, ...props}: PropsWithChildren<any | Gat
     return (
         <Link
             {...props}
-            className="p-2 text-black bg-reading font-bold clickable shadow-md inline-block rounded">
+            className="p-2 text-reading dark:text-black bg-gray-600 dark:bg-reading font-bold clickable shadow-md inline-block rounded">
             {children}
         </Link>
     );

@@ -2,8 +2,7 @@ import React from 'react';
 import Button from '../components/Button';
 
 export default {
-    title: 'Button',
-    component: Button,
+    title: 'Hoogenbosch/Components/Button',
     argTypes: {
         children: {
             name: 'Text',
@@ -11,6 +10,9 @@ export default {
             defaultValue: 'Click me!',
         },
     },
+    parameters: {
+        layout: 'centered',
+    }
 };
 
 const Template = (args) => <Button {...args} to="/button"/>

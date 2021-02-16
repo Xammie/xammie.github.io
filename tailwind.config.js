@@ -12,4 +12,10 @@ module.exports = {
             },
         },
     },
+    darkMode: 'class',
+    variants: {
+        extend: {
+            display: ['dark'],
+        }
+    }
 }

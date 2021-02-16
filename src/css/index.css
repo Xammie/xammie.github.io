@@ -3,7 +3,10 @@
 @tailwind utilities;
 
 .clickable {
-    @apply outline-none hover:bg-gray-900 hover:text-reading focus:bg-blue-900 focus:ring ring-blue-600 transition duration-100 transition-colors hover:shadow-md;
+    @apply hover:bg-gray-200 dark:hover:bg-gray-900 focus:bg-blue-300 dark:focus:bg-blue-900;
+    @apply focus:ring ring-blue-200 dark:ring-blue-600;
+    @apply transition duration-100 transition-colors;
+    @apply outline-none dark:hover:text-reading hover:shadow;
 }
 
 .flex-center {
@@ -56,6 +59,10 @@
 }
 
 .markdown a {
+    color: #0040e4;
+}
+
+.dark .markdown a {
     color: #00d0ff;
 }
 

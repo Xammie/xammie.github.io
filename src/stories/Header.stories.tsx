@@ -2,8 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 
 export default {
-    title: 'Header',
-    component: Header,
+    title: 'Hoogenbosch/Layout/Header',
 };
 
 export {Header};

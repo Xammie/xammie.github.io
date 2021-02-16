@@ -1,4 +1,5 @@
 import '../src/css/index.css';
+import '../src/css/prism.css';
 import {action} from "@storybook/addon-actions";
 
 // Gatsby's Link overrides:
@@ -6,8 +7,8 @@ import {action} from "@storybook/addon-actions";
 // This global object isn't set in storybook context, requiring you to override it to empty functions (no-op),
 // so Gatsby Link doesn't throw any errors.
 global.___loader = {
-    enqueue: () => {},
-    hovering: () => {},
+    enqueue: () => null,
+    hovering: () => null,
 }
 
 // This global variable is prevents the "__BASE_PATH__ is not defined" error inside Storybook.
@@ -20,14 +21,26 @@ window.___navigate = pathname => {
 }
 
 export const parameters = {
-    actions: {argTypesRegex: "^on[A-Z].*"},
-    backgrounds: {
-        default: 'default',
-        values: [
+    actions: {
+        argTypesRegex: '^on[A-Z].*',
+    },
+    themes: {
+        clearable: false,
+        list: [
             {
-                name: 'default',
-                value: '#121212',
+                name: 'Dark',
+                class: ['dark', 'text-reading', 'bg-background'],
+                color: '#000000',
+                default: true,
+            },
+            {
+                name: 'Light',
+                class: ['text-background', 'bg-gray-100'],
+                color: '#ffffff',
             },
         ],
+    },
+    backgrounds: {
+        disable: true,
     },
 }

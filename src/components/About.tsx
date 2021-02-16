@@ -1,5 +1,6 @@
 import Profile from "./Profile";
-import Enrise from "../img/enrise.svg";
+import EnriseLight from "../img/enrise-light.svg";
+import EnriseDark from "../img/enrise-dark.svg";
 import Card from "./Card";
 import React from "react";
 import Socials from "./Socials";
@@ -23,7 +24,8 @@ export default function About() {
                                target="_blank"
                                rel="noopener"
                                className="block md:inline h-12 p-2 mx-1 rounded clickable">
-                                <Enrise width={null} height="100%"/>
+                                <EnriseLight className="dark:hidden" width={null} height="100%"/>
+                                <EnriseDark className="hidden dark:block" width={null} height="100%"/>
                             </a>
                         </div>
                         <div className="hidden md:flex">
