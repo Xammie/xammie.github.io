@@ -1,5 +1,3 @@
-const { createFilePath } = require(`gatsby-source-filesystem`);
-
 exports.createPages = async ({actions, graphql, reporter}) => {
     const {createPage} = actions;
     const blogPostTemplate = require.resolve(`./src/templates/BlogDetail.tsx`);
@@ -40,17 +38,4 @@ exports.createPages = async ({actions, graphql, reporter}) => {
             },
         })
     })
-}
-
-// RSS
-exports.onCreateNode = ({ node, actions, getNode }) => {
-    const { createNodeField } = actions
-    if (node.internal.type === `MarkdownRemark`) {
-        const value = createFilePath({ node, getNode })
-        createNodeField({
-            name: `slug`,
-            node,
-            value,
-        })
-    }
 }

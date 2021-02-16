@@ -151,6 +151,62 @@ module.exports = {
         },
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-sitemap`,
-        `gatsby-plugin-feed`,
+        {
+            resolve: `gatsby-plugin-feed`,
+            options: {
+                query: `
+                    {
+                        site {
+                            siteMetadata {
+                                title
+                                description
+                                siteUrl
+                                site_url: siteUrl
+                            }
+                        }
+                    }
+                `,
+                feeds: [
+                    {
+                        serialize: ({query: {site, allFile}}) => {
+                            return allFile.nodes.map(node => {
+                                return Object.assign({}, node.remark.frontmatter, {
+                                    description: node.remark.excerpt,
+                                    date: node.remark.frontmatter.date,
+                                    url: site.siteMetadata.siteUrl + node.remark.frontmatter.slug,
+                                    guid: site.siteMetadata.siteUrl + node.remark.frontmatter.slug,
+                                    custom_elements: [{"content:encoded": node.remark.html}],
+                                })
+                            })
+                        },
+                        query: `
+                            {
+                                allFile(
+                                    filter: {
+                                        sourceInstanceName: {eq: "blog"}, ext: {eq: ".md"}
+                                        childMarkdownRemark: {frontmatter: {publish: {eq: true}}}
+                                    },
+                                    sort: {order: DESC, fields: childMarkdownRemark___frontmatter___date}
+                                ) {
+                                    nodes {
+                                        remark: childMarkdownRemark {
+                                            excerpt
+                                            html
+                                            frontmatter {
+                                                title
+                                                date
+                                                slug
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        `,
+                        output: `/rss.xml`,
+                        match: `^/blog/`,
+                    },
+                ],
+            }
+        },
     ],
 }
