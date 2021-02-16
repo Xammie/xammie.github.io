@@ -45,7 +45,7 @@ module.exports = {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `blog`,
-                path: `${__dirname}/src/blog/`
+                path: `${__dirname}/content/`
             }
         },
         `gatsby-transformer-sharp`,
@@ -154,5 +154,6 @@ module.exports = {
         },
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-sitemap`,
+        `gatsby-plugin-feed`,
     ],
 }
