@@ -1,8 +1,9 @@
 ---
-title:   "Eager loading hasMany relationship"
+title:   "Eager loading hasMany relationship in Laravel"
 slug:    "/blog/eager-loading-hasmany-relationship-laravel"
 date:    "2021-02-01"
 tags:    ["Laravel", "Eloquent"]
+image:   "assets/eager-loading.png"
 publish: true
 ---
 

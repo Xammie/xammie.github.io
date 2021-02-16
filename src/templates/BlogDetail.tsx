@@ -18,6 +18,7 @@ export default function BlogDetail({data}) {
         <Layout>
             <Seo title={frontmatter.title}
                  description={excerpt}
+                 image={frontmatter.image.childImageSharp.fluid.src}
                  article/>
             <Container className="flex flex-col justify-between">
                 <div>
@@ -60,6 +61,13 @@ export const pageQuery = graphql`
                     slug
                     title
                     tags
+                    image {
+                        childImageSharp {
+                            fluid(maxWidth: 900, toFormat: JPG) {
+                                src
+                            }
+                        }
+                    }
                 }
                 fields {
                     readingTime {
