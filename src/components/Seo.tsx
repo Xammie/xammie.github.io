@@ -31,7 +31,9 @@ export default function Seo({title, description, image, article}: Props) {
     }
 
     return (
-        <Helmet title={seo.title} titleTemplate={titleTemplate}>
+        <Helmet title={title}
+                titleTemplate={titleTemplate}
+                defaultTitle={defaultTitle}>
             <html lang="en"/>
             <meta charSet="utf-8"/>
             <meta name="description" content={seo.description}/>
