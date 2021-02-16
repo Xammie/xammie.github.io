@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '../components/Button';
 
 export default {
-    title: 'Hoogenbosch/Components/Button',
+    title: 'Components/Button',
     argTypes: {
         children: {
             name: 'Text',

@@ -4,7 +4,7 @@ import image from '../img/profile.jpg';
 import Container from "../components/Container";
 
 export default {
-    title: 'Hoogenbosch/Layout/Header',
+    title: 'Layout/Header',
     decorators: [(Story) => <Container><Story/></Container>],
     parameters: {
         layout: 'fullscreen',

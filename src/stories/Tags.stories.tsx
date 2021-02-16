@@ -3,7 +3,7 @@ import TagsComponent from '../components/Tags';
 import Card from "../components/Card";
 
 export default {
-    title: 'Hoogenbosch/Components/Tags',
+    title: 'Components/Tags',
     parameters: {
         layout: 'centered',
     },

@@ -3,7 +3,7 @@ import Card from '../components/Card';
 import Container from "../components/Container";
 
 export default {
-    title: 'Hoogenbosch/Components/Card',
+    title: 'Components/Card',
     decorators: [(Story) => <Container><Story/></Container>],
     parameters: {
         layout: 'fullscreen',

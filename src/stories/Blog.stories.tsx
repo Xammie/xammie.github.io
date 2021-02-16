@@ -5,7 +5,7 @@ import List from "../components/Blog/List";
 import Container from "../components/Container";
 
 export default {
-    title: 'Hoogenbosch/Layout/Blog',
+    title: 'Layout/Blog',
     decorators: [(Story) => <Container><Story/></Container>],
     parameters: {
         layout: 'fullscreen',

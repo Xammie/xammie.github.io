@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import Container from "../components/Container";
 
 export default {
-    title: 'Hoogenbosch/Layout/Footer',
+    title: 'Layout/Footer',
     decorators: [(Story) => <Container><Story/></Container>],
     parameters: {
         layout: 'fullscreen',
