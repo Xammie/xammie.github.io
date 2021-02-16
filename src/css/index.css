@@ -130,7 +130,7 @@
 }
 
 .markdown pre > code {
-    @apply block p-2;
+    @apply block p-2 text-sm sm:text-base;
 }
 
 .markdown > *:last-child {
