@@ -4,7 +4,7 @@ import ThemeToggle from "./ThemeToggle";
 
 export default function Layout({children}) {
     return (
-        <div className="min-h-screen bg-gray-100 dark:bg-background relative"
+        <div className="min-h-screen bg-gray-100 dark:bg-background relative transition-colors duration-300"
              style={{minHeight: '-webkit-fill-available'}}>
             <Helmet defaultTitle="Max Hoogenbosch"
                     titleTemplate="%s - Max Hoogenbosch">
