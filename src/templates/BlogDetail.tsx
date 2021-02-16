@@ -3,23 +3,22 @@ import {graphql} from "gatsby"
 import Container from "../components/Container";
 import Card from "../components/Card";
 import Layout from "../components/Layout";
-import {Helmet} from "react-helmet";
 import List from "../components/Blog/List";
 import Header from "../components/Header";
 import Tags from "../components/Tags";
 import Footer from "../components/Footer";
 import Divider from "../components/Divider";
 import Img from "gatsby-image";
+import Seo from "../components/Seo";
 
 export default function BlogDetail({data}) {
     const {frontmatter, html, excerpt, fields} = data.blog.remark;
 
     return (
         <Layout>
-            <Helmet>
-                <title>{frontmatter.title}</title>
-                <meta name="description" content={excerpt}/>
-            </Helmet>
+            <Seo title={frontmatter.title}
+                 description={excerpt}
+                 article/>
             <Container className="flex flex-col justify-between">
                 <div>
                     <Header image={<Img alt="Max Hoogenbosch"

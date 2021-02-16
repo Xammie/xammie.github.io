@@ -6,10 +6,12 @@ import {graphql} from "gatsby";
 import Footer from "../components/Footer";
 import About from "../components/About";
 import Img from "gatsby-image";
+import Seo from "../components/Seo";
 
 export default function Home({data}) {
     return (
         <Layout>
+            <Seo/>
             <Container className="flex flex-col justify-between">
                 <div>
                     <About image={<Img alt="Max Hoogenbosch"

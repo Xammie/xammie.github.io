@@ -5,15 +5,13 @@ import List from "../components/Blog/List";
 import {graphql} from "gatsby";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import {Helmet} from "react-helmet";
 import Img from "gatsby-image";
+import Seo from "../components/Seo";
 
 export default function Blog({data}) {
     return (
         <Layout>
-            <Helmet>
-                <title>Blog</title>
-            </Helmet>
+            <Seo title="Blog"/>
             <Container className="flex flex-col justify-between">
                 <div>
                     <Header image={<Img alt="Max Hoogenbosch"

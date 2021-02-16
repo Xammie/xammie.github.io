@@ -1,6 +1,10 @@
 module.exports = {
     siteMetadata: {
+        title: `Max Hoogenbosch`,
+        titleTemplate: `%s - Max Hoogenbosch`,
+        description: `Technical blog about laravel and React`,
         siteUrl: `https://hoogenbos.ch`,
+        twitterUsername: "@maxhoogenbosch",
     },
     plugins: [
         {
