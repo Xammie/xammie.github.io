@@ -26,7 +26,8 @@ export default function BlogDetail({data}) {
                                         title="This is me :)"
                                         fluid={data.profile.childImageSharp.fluid}/>}/>
                     <Card>
-                        <div className="text-sm flex flex-wrap items-center">
+                        <div className="whitespace-nowrap text-gray-500 dark:text-gray-300 md:hidden">{frontmatter.date}</div>
+                        <div className="text-sm flex-wrap items-center hidden md:flex mb-4">
                             <div className="whitespace-nowrap py-1 md:py-0">{frontmatter.date}</div>
                             <Divider/>
                             <div className="whitespace-nowrap py-1 md:py-0">{fields.readingTime.text}</div>
@@ -36,7 +37,7 @@ export default function BlogDetail({data}) {
                                 <Tags tags={frontmatter.tags}/>
                             </>}
                         </div>
-                        <h1 className="font-bold text-2xl md:text-3xl my-4">
+                        <h1 className="font-bold text-2xl md:text-3xl mb-4">
                             {frontmatter.title}
                         </h1>
                         <article className="markdown"

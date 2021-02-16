@@ -7,7 +7,7 @@ export default function Footer() {
             <div>
                 &copy; {new Date().getFullYear()} Max Hoogenbosch
             </div>
-            <div className="flex">
+            <div className="flex mb-2 sm:mb-0">
                 <Socials/>
             </div>
         </div>

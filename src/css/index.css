@@ -126,11 +126,11 @@
 }
 
 .markdown code {
-    @apply rounded px-1;
+    @apply rounded px-1 text-sm sm:text-base;
 }
 
 .markdown pre > code {
-    @apply block p-2 text-sm sm:text-base;
+    @apply block p-2;
 }
 
 .markdown > *:last-child {
