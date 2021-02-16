@@ -1,9 +1,13 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Sun from '../img/sun.svg';
 import Moon from '../img/moon.svg';
 
 export default function ThemeToggle() {
-    let [isDarkMode, setDarkMode] = useState(localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches));
+    let [isDarkMode, setDarkMode] = useState(undefined);
+
+    useEffect(() => {
+        setDarkMode(localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches))
+    }, [])
 
     let onToggle = () => {
         localStorage.theme = isDarkMode ? 'light' : 'dark';
