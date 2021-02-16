@@ -1,4 +1,91 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Max Hoogenbosch]]></title><description><![CDATA[Technical blog about laravel and React]]></description><link>https://hoogenbos.ch</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 16 Feb 2021 14:17:27 GMT</lastBuildDate><item><title><![CDATA[Eager loading hasMany relationship]]></title><description><![CDATA[Eager loading relationships in Laravel makes it
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Max Hoogenbosch]]></title><description><![CDATA[Technical blog about laravel and React]]></description><link>https://hoogenbos.ch</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 16 Feb 2021 16:57:01 GMT</lastBuildDate><item><title><![CDATA[Use Tailwind CSS dark mode in Storybook]]></title><description><![CDATA[Since version 2.0 Tailwind CSS has a dark mode feature. When Implementing this in a project that uses Storybook for
+component development…]]></description><link>https://hoogenbos.ch/use-tailwind-darkmode-in-storybook/</link><guid isPermaLink="false">https://hoogenbos.ch/use-tailwind-darkmode-in-storybook/</guid><pubDate>Tue, 16 Feb 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4cca75866ffd4cfebd2262137bfc1d04/6e9ba/storybook-darkmode.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 40.49079754601227%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAABd0lEQVQoz52Ry2rbQBhGp7QLX8FX8Cs4AePEjrKI/QLdFUMeMWQTWrryWxhCQ+vS1lEusmVJti6jSLabnoympIsu2lKYA//oGw4fv0Q8vWc2u+Hr9Q2rQBJvvhPFKeY65YuXEoQhYRQh4xg/CJAyZr6wmV2bmHcWC9tm6Tg6T9IUEbkhjudju6ufwnTH/cLh9ZtT2gcGJ4Mhg8GJZjgccGQYXJydM7284sOnKZPJhPF4zGg04vjYQPhxgudHLJXUWQU8qIZ3c5u9dptXL19QLBTI5XKagpqFELx/+47ID/A8V+FhWRadTkdnwl2FzJcugUw06e6HunscHB5SLpdpNps0Go1f1Go19vb3VdMjer0e/X4fQ7VutVrU63XEWm4wLRuZbHU7dbSw2+1SLBb1o0xSrVY12Vwqlcjn87pxRjZXKhWdifXDluk3U+0v+qPwmUyaffud50wEyY7buaN/zL8I/4aQm0du1Q6vPn5mHUq2j+id/q/wCQf8f9YCLXDrAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+          &lt;source
+              srcset=&quot;/static/4cca75866ffd4cfebd2262137bfc1d04/94563/storybook-darkmode.webp 163w,
+/static/4cca75866ffd4cfebd2262137bfc1d04/647a8/storybook-darkmode.webp 325w,
+/static/4cca75866ffd4cfebd2262137bfc1d04/c1dc5/storybook-darkmode.webp 650w,
+/static/4cca75866ffd4cfebd2262137bfc1d04/feeb6/storybook-darkmode.webp 731w&quot;
+              sizes=&quot;(max-width: 650px) 100vw, 650px&quot;
+              type=&quot;image/webp&quot;
+            /&gt;
+          &lt;source
+            srcset=&quot;/static/4cca75866ffd4cfebd2262137bfc1d04/222b7/storybook-darkmode.png 163w,
+/static/4cca75866ffd4cfebd2262137bfc1d04/ff46a/storybook-darkmode.png 325w,
+/static/4cca75866ffd4cfebd2262137bfc1d04/a6d36/storybook-darkmode.png 650w,
+/static/4cca75866ffd4cfebd2262137bfc1d04/6e9ba/storybook-darkmode.png 731w&quot;
+            sizes=&quot;(max-width: 650px) 100vw, 650px&quot;
+            type=&quot;image/png&quot;
+          /&gt;
+          &lt;img
+            class=&quot;gatsby-resp-image-image&quot;
+            src=&quot;/static/4cca75866ffd4cfebd2262137bfc1d04/a6d36/storybook-darkmode.png&quot;
+            alt=&quot;Storybook darkmode&quot;
+            title=&quot;Storybook darkmode&quot;
+            loading=&quot;lazy&quot;
+            style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+          /&gt;
+        &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Since version 2.0 Tailwind CSS has a dark mode feature. When Implementing this in a project that uses Storybook for
+component development you want to be able to quickly switch between light and dark mode.&lt;/p&gt;
+&lt;p&gt;To get started you first have to enable dark mode in Tailwind CSS and set the darkMode option to &lt;code class=&quot;language-text&quot;&gt;class&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// tailwind.config.js&lt;/span&gt;
+module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    darkMode&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;class&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Next we need to install the themes addon for Storybook.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; -D storybook-addon-themes&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;After the addon is installed we need to add it to storybook&apos;s configuration.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// .storybook/main.js&lt;/span&gt;
+module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    addons&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;token string&quot;&gt;&apos;storybook-addon-themes&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The last step is to define the themes for the Storybook preview.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// .storybook/preview.js&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; parameters &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    themes&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        clearable&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        list&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                name&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Light&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                color&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;#ffffff&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                name&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Dark&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;token comment&quot;&gt;// The class dark will be added to the body tag&lt;/span&gt;
+                &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;dark&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                color&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;#000000&apos;&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The dark theme will add the class &lt;code class=&quot;language-text&quot;&gt;dark&lt;/code&gt; to the body when active. This enables the Tailwind CSS dark mode.&lt;/p&gt;
+&lt;p&gt;And that&apos;s it! ✨ You can now switch between dark and light theme in
+Storybook.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/storybook/&quot;&gt;Click here for a working demo&lt;/a&gt;.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Eager loading hasMany relationship in Laravel]]></title><description><![CDATA[Eager loading relationships in Laravel makes it
 really easy to avoid N+1 query problems. This occurs when you run an additional query for…]]></description><link>https://hoogenbos.ch/eager-loading-many-relationship/</link><guid isPermaLink="false">https://hoogenbos.ch/eager-loading-many-relationship/</guid><pubDate>Mon, 01 Feb 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a href=&quot;https://laravel.com/docs/8.x/eloquent-relationships#eager-loading&quot;&gt;Eager loading&lt;/a&gt; relationships in Laravel makes it
 really easy to avoid N+1 query problems. This occurs when you run an additional query for each result in a previous
 query. Take for example a model &lt;code class=&quot;language-text&quot;&gt;Post&lt;/code&gt; that has a &lt;code class=&quot;language-text&quot;&gt;hasOne&lt;/code&gt; relationship with &lt;code class=&quot;language-text&quot;&gt;User&lt;/code&gt;.&lt;/p&gt;
