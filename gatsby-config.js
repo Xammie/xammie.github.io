@@ -145,13 +145,6 @@ module.exports = {
                 ],
             },
         },
-        {
-            resolve: `gatsby-plugin-nprogress`,
-            options: {
-                color: `#1e40af`,
-                showSpinner: false,
-            },
-        },
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-sitemap`,
         `gatsby-plugin-feed`,
