@@ -50,6 +50,13 @@ module.exports = {
             test: /\.svg$/,
             enforce: 'pre',
             loader: require.resolve('@svgr/webpack'),
+            options: {
+                svgoConfig: {
+                    plugins: {
+                        removeViewBox: false,
+                    },
+                },
+            },
         });
 
         return config;

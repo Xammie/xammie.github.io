@@ -6,6 +6,7 @@ import {graphql} from "gatsby";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import {Helmet} from "react-helmet";
+import Img from "gatsby-image";
 
 export default function Blog({data}) {
     return (
@@ -15,7 +16,9 @@ export default function Blog({data}) {
             </Helmet>
             <Container className="flex flex-col justify-between">
                 <div>
-                    <Header/>
+                    <Header image={<Img alt="Max Hoogenbosch"
+                                        title="This is me :)"
+                                        fluid={data.profile.childImageSharp.fluid}/>}/>
                     <List data={data.blogs}/>
                 </div>
                 <Footer/>
@@ -46,6 +49,13 @@ export const pageQuery = graphql`
             }
             pageInfo {
                 hasNextPage
+            }
+        }
+        profile: file(relativePath: { eq: "profile.jpg" }) {
+            childImageSharp {
+                fluid(maxWidth: 150, maxHeight: 150) {
+                    ...GatsbyImageSharpFluid_withWebp
+                }
             }
         }
     }

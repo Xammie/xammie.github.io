@@ -11,7 +11,6 @@ export default function Layout({children}) {
                 <html lang="en"/>
                 <meta charSet="utf-8"/>
                 <meta name="description" content="Full Stack Developer"/>
-                <meta name="theme-color" content="#1a202c"/>
             </Helmet>
             {children}
             <ThemeToggle/>

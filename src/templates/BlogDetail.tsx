@@ -9,6 +9,7 @@ import Header from "../components/Header";
 import Tags from "../components/Tags";
 import Footer from "../components/Footer";
 import Divider from "../components/Divider";
+import Img from "gatsby-image";
 
 export default function BlogDetail({data}) {
     const {frontmatter, html, excerpt, fields} = data.blog.remark;
@@ -21,7 +22,9 @@ export default function BlogDetail({data}) {
             </Helmet>
             <Container className="flex flex-col justify-between">
                 <div>
-                    <Header/>
+                    <Header image={<Img alt="Max Hoogenbosch"
+                                        title="This is me :)"
+                                        fluid={data.profile.childImageSharp.fluid}/>}/>
                     <Card>
                         <div className="text-sm flex flex-wrap items-center">
                             <div className="whitespace-nowrap py-1 md:py-0">{frontmatter.date}</div>
@@ -91,6 +94,13 @@ export const pageQuery = graphql`
             }
             pageInfo {
                 hasNextPage
+            }
+        }
+        profile: file(relativePath: { eq: "profile.jpg" }) {
+            childImageSharp {
+                fluid(maxWidth: 150, maxHeight: 150) {
+                    ...GatsbyImageSharpFluid_withWebp
+                }
             }
         }
     }
