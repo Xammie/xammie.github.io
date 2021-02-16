@@ -16,8 +16,7 @@ To get started you first have to enable dark mode in Tailwind CSS and set the da
 ```js
 // tailwind.config.js
 module.exports = {
-    darkMode: 'class',
-    ...
+    darkMode: 'class'
 }
 ```
 
@@ -33,10 +32,8 @@ After the addon is installed we need to add it to storybook's configuration.
 // .storybook/main.js
 module.exports = {
     addons: [
-        'storybook-addon-themes',
-        ...
-    ],
-    ...
+        'storybook-addon-themes'
+    ]
 }
 ```
 
