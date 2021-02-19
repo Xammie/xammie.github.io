@@ -27,6 +27,3 @@ const blogData = {
 export const BlogList = () => <List data={{nodes: [blogData, blogData, blogData], pageInfo: {hasNextPage: true}}}/>
 
 export const BlogItem = () => <Card><Item data={blogData.remark}/></Card>
-
-
-

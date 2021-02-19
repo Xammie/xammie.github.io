@@ -20,7 +20,6 @@ export default function About({image}) {
                     <div className="flex items-center text-xl md:text-2xl">
                         Full stack developer at
                         <a href="https://enrise.com"
-                           target="_blank"
                            rel="noopener"
                            className="block md:inline h-12 p-2 mx-1 rounded clickable">
                             <EnriseLight className="dark:hidden" width={null} height="100%"/>
