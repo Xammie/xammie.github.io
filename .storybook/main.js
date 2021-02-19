@@ -6,6 +6,7 @@ module.exports = {
         '@storybook/addon-links',
         '@storybook/addon-essentials',
         'storybook-addon-themes',
+        '@storybook/addon-google-analytics',
     ],
     webpackFinal: async config => {
         // Transpile Gatsby module because Gatsby includes un-transpiled ES6 code.
