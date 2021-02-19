@@ -11,3 +11,6 @@ addons.setConfig({
     initialActive: 'sidebar',
     showRoots: false,
 });
+
+window.STORYBOOK_GA_ID = "UA-181396331-1"
+window.STORYBOOK_REACT_GA_OPTIONS = {}

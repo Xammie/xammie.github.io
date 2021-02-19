@@ -53,6 +53,7 @@
     "@babel/core": "^7.12.10",
     "@storybook/addon-actions": "^6.1.18",
     "@storybook/addon-essentials": "^6.1.11",
+    "@storybook/addon-google-analytics": "^6.1.18",
     "@storybook/addon-links": "^6.1.11",
     "@storybook/addons": "^6.1.18",
     "@storybook/react": "^6.1.11",
