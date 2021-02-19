@@ -2,6 +2,7 @@ import React from "react";
 import Card from "../Card";
 import Button from "../Button";
 import Item from "./Item";
+import {graphql} from "gatsby";
 
 export default function List({title = 'Blog posts', data}) {
     return (
@@ -19,3 +20,22 @@ export default function List({title = 'Blog posts', data}) {
         </Card>
     )
 }
+
+export const query = graphql`
+    fragment BlogList on FileConnection {
+        nodes {
+            remark: childMarkdownRemark {
+                excerpt(pruneLength: 150)
+                frontmatter {
+                    title
+                    slug
+                    date(formatString: "MMMM D, YYYY")
+                    tags
+                }
+            }
+        }
+        pageInfo {
+            hasNextPage
+        }
+    }
+`

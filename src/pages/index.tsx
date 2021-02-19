@@ -34,20 +34,7 @@ export const pageQuery = graphql`
             },
             sort: {order: DESC, fields: childMarkdownRemark___frontmatter___date},
         ) {
-            nodes {
-                remark: childMarkdownRemark {
-                    excerpt(pruneLength: 150)
-                    frontmatter {
-                        title
-                        slug
-                        date(formatString: "MMMM D, YYYY")
-                        tags
-                    }
-                }
-            }
-            pageInfo {
-                hasNextPage
-            }
+            ...BlogList
         }
         profile: file(relativePath: { eq: "profile.jpg" }) {
             childImageSharp {

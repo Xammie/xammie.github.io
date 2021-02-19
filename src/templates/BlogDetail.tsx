@@ -26,7 +26,9 @@ export default function BlogDetail({data}) {
                                         title="This is me :)"
                                         fluid={data.profile.childImageSharp.fluid}/>}/>
                     <Card>
-                        <div className="text-sm whitespace-nowrap text-gray-500 dark:text-gray-300 md:hidden">{frontmatter.date}</div>
+                        <div className="text-sm whitespace-nowrap text-gray-500 dark:text-gray-300 md:hidden">
+                            {frontmatter.date}
+                        </div>
                         <div className="text-sm flex-wrap items-center hidden md:flex mb-4">
                             <div className="whitespace-nowrap py-1 md:py-0">{frontmatter.date}</div>
                             <Divider/>
@@ -89,20 +91,7 @@ export const pageQuery = graphql`
             sort: {order: DESC, fields: childMarkdownRemark___frontmatter___date}
             limit: 3
         ) {
-            nodes {
-                remark: childMarkdownRemark {
-                    excerpt(pruneLength: 150)
-                    frontmatter {
-                        date(formatString: "MMMM D, YYYY")
-                        slug
-                        title
-                        tags
-                    }
-                }
-            }
-            pageInfo {
-                hasNextPage
-            }
+            ...BlogList
         }
         profile: file(relativePath: { eq: "profile.jpg" }) {
             childImageSharp {
