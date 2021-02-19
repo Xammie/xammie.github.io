@@ -14,7 +14,7 @@ export default function Item({data}) {
                 </div>
             </div>
             <div className="truncate text-gray-500 dark:text-gray-400">{data.excerpt}</div>
-            <div className="text-gray-500 dark:text-gray-400 md:hidden">{data.frontmatter.date}</div>
+            <div className="text-sm text-gray-500 dark:text-gray-400 md:hidden">{data.frontmatter.date}</div>
         </Link>
     )
 }

@@ -11,7 +11,7 @@ export default function About({image}) {
             <div className="block md:hidden p-5 flex-center">
                 <Profile image={image} className="h-32 w-32 md:h-48 md:w-48"/>
             </div>
-            <Card className="flex items-center md:rounded-full">
+            <Card className="flex items-center justify-center md:justify-start md:rounded-full">
                 <Profile image={image} className="h-32 w-32 md:h-48 md:w-48 hidden md:block"/>
                 <div className="flex flex-col md:px-5 text-center md:text-left">
                     <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold">
