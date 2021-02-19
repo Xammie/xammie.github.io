@@ -37,6 +37,7 @@ export default function Seo({title, description, image, article}: Props) {
             <html lang="en"/>
             <meta charSet="utf-8"/>
             <meta name="description" content={seo.description}/>
+            <link rel="canonical" href={seo.url}/>
             {seo.image && <meta name="image" content={seo.image}/>}
             {seo.url && <meta property="og:url" content={seo.url}/>}
             {(article ? true : null) && <meta property="og:type" content="article"/>}
