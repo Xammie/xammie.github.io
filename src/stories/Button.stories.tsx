@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../components/Button';
+import ButtonComponent from '../components/Button';
 
 export default {
     title: 'Components/Button',
@@ -15,8 +15,4 @@ export default {
     }
 };
 
-const Template = (args) => <Button {...args} to="/button"/>
-
-export {Template as Button};
-
-
+export const Button = (args) => <ButtonComponent {...args} to="/button"/>
