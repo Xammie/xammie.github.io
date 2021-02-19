@@ -1,6 +1,6 @@
 ---
 title:   "Use Tailwind CSS dark mode in Storybook"
-slug:    "/blog/use-tailwind-darkmode-in-storybook"
+slug:    "/blog/use-tailwind-darkmode-in-storybook/"
 date:    "2021-02-16"
 tags:    ["Tailwindcss", "Storybook",  "Darkmode"]
 image:   "assets/storybook-darkmode.png"
