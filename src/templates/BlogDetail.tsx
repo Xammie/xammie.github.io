@@ -18,7 +18,9 @@ export default function BlogDetail({data}) {
         <Layout>
             <Seo title={frontmatter.title}
                  description={excerpt}
-                 image={frontmatter.image.childImageSharp.fluid.src}
+                 image={frontmatter.image?.childImageSharp?.fluid?.src ?? undefined}
+                 tags={frontmatter.tags}
+                 published={frontmatter.published}
                  article/>
             <Container className="flex flex-col justify-between">
                 <div>
@@ -58,9 +60,10 @@ export const pageQuery = graphql`
         blog: file(childMarkdownRemark: {frontmatter: {slug: {eq:  $slug }}}) {
             remark: childMarkdownRemark {
                 html
-                excerpt(pruneLength: 100)
+                excerpt(pruneLength: 200)
                 frontmatter {
                     date(formatString: "MMMM D, YYYY")
+                    published: date(formatString: "YYYY-MM-DD[T]HH:mm:ss.SSS[Z]")
                     slug
                     title
                     tags

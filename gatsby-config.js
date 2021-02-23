@@ -4,7 +4,9 @@ module.exports = {
         titleTemplate: `%s - Max Hoogenbosch`,
         description: `Technical blog about laravel and React`,
         siteUrl: `https://hoogenbos.ch`,
-        twitterUsername: "@maxhoogenbosch",
+        twitterUsername: `@maxhoogenbosch`,
+        lang: `en`,
+        locale: `en_US`,
     },
     plugins: [
         {
