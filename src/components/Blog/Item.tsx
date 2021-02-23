@@ -1,11 +1,15 @@
 import Link from "gatsby-link";
 import React from "react";
+import Img from "gatsby-image";
 
 export default function Item({data}) {
     return (
         <Link to={data.frontmatter.slug}
-              className="rounded p-2 clickable block">
-            <div className="flex flex-col md:flex-row justify-between md:items-center md:mb-2">
+              className="rounded-lg p-2 clickable block flex flex-col hover:shadow-md">
+            {data.frontmatter.image?.childImageSharp &&
+            <Img className="rounded-lg shadow-md mb-3"
+                 fluid={data.frontmatter.image.childImageSharp.fluid}/>}
+            <div className="flex justify-between md:mb-1">
                 <div className="font-bold text-lg md:mb-0 leading-tight">
                     {data.frontmatter.title}
                 </div>
