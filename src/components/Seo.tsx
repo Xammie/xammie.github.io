@@ -48,7 +48,7 @@ export default function Seo({title, description, image, article, published, tags
             <meta property="og:url" content={seo.url}/>
             <meta property="og:locale" content={locale}/>
             <meta property="og:site_name" content={defaultTitle}/>
-            {seo.title && <meta property="og:title" content={seo.title}/>}
+            <meta property="og:title" content={seo.title}/>
             {seo.description && <meta property="og:description" content={seo.description}/>}
             {seo.image && <meta property="og:image" content={seo.image}/>}
             {published && <meta property="og:updated_time" content={published}/>}
