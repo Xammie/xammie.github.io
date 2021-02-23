@@ -37,11 +37,7 @@ export const pageQuery = graphql`
             ...BlogList
         }
         profile: file(relativePath: { eq: "profile.jpg" }) {
-            childImageSharp {
-                fluid(maxWidth: 300, maxHeight: 300) {
-                    ...GatsbyImageSharpFluid_withWebp
-                }
-            }
+            ...LargeProfileImage
         }
     }
 `
