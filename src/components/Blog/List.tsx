@@ -9,7 +9,7 @@ export default function List({title = 'Blog posts', data}) {
         <Card>
             <h2 className="font-bold text-xl md:text-2xl">{title}</h2>
             <div className="space-y-3 mt-2">
-                {data.nodes.map(({remark}, index) => <Item data={remark} key={index}/>)}
+                {data.nodes.map((data, index) => <Item data={data} key={index}/>)}
             </div>
             {data.pageInfo.hasNextPage &&
             <div className="flex justify-end mt-3">
@@ -22,20 +22,18 @@ export default function List({title = 'Blog posts', data}) {
 }
 
 export const query = graphql`
-    fragment BlogList on FileConnection {
+    fragment BlogList on MarkdownRemarkConnection {
         nodes {
-            remark: childMarkdownRemark {
-                excerpt(pruneLength: 150)
-                frontmatter {
-                    title
-                    slug
-                    date(formatString: "MMMM D, YYYY")
-                    tags
-                    image {
-                        childImageSharp {
-                            fluid(maxWidth: 700, maxHeight: 200, quality: 70, toFormat: JPG)  {
-                                ...GatsbyImageSharpFluid_withWebp
-                            }
+            excerpt(pruneLength: 150)
+            frontmatter {
+                title
+                slug
+                date(formatString: "MMMM D, YYYY")
+                tags
+                image {
+                    childImageSharp {
+                        fluid(maxWidth: 700, maxHeight: 200, quality: 70, toFormat: JPG)  {
+                            ...GatsbyImageSharpFluid_withWebp
                         }
                     }
                 }

@@ -1,26 +1,20 @@
 exports.createPages = async ({actions, graphql, reporter}) => {
     const {createPage} = actions;
-    const blogPostTemplate = require.resolve(`./src/templates/BlogDetail.tsx`);
+
     const result = await graphql(`
-  {
-        blogs: allFile(
-            filter: {
-                sourceInstanceName: {eq: "blog"}, ext: {eq: ".md"}
-                childMarkdownRemark: {frontmatter: {publish: {eq: true}}}
-            },
-            sort: {order: ASC, fields: childMarkdownRemark___frontmatter___date},
-            limit: 1000
-        ) {
-            nodes {
-                childMarkdownRemark {
+        {
+            blogs: allMarkdownRemark(
+                filter: {frontmatter: {publish: {eq: true}}}
+                sort: {order: ASC, fields: frontmatter___date}
+            ) {
+                nodes {
                     frontmatter {
                         slug
                     }
                 }
             }
         }
-   }
-  `);
+    `);
 
     // Handle errors
     if (result.errors) {
@@ -28,13 +22,14 @@ exports.createPages = async ({actions, graphql, reporter}) => {
         return
     }
 
-    result.data.blogs.nodes.forEach(({childMarkdownRemark}) => {
+    const template = require.resolve(`./src/templates/BlogDetail.tsx`);
+
+    result.data.blogs.nodes.forEach(({frontmatter}) => {
         createPage({
-            path: childMarkdownRemark.frontmatter.slug,
-            component: blogPostTemplate,
+            path: frontmatter.slug,
+            component: template,
             context: {
-                // additional data can be passed via context
-                slug: childMarkdownRemark.frontmatter.slug,
+                slug: frontmatter.slug,
             },
         })
     })

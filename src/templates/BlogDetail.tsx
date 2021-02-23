@@ -12,7 +12,7 @@ import Img from "gatsby-image";
 import Seo from "../components/Seo";
 
 export default function BlogDetail({data}) {
-    const {frontmatter, html, excerpt, fields} = data.blog.remark;
+    const {frontmatter, html, excerpt, fields} = data.blog;
 
     return (
         <Layout>
@@ -57,45 +57,41 @@ export default function BlogDetail({data}) {
 
 export const pageQuery = graphql`
     query($slug: String!) {
-        blog: file(childMarkdownRemark: {frontmatter: {slug: {eq:  $slug }}}) {
-            remark: childMarkdownRemark {
-                html
-                excerpt(pruneLength: 200)
-                frontmatter {
-                    date(formatString: "MMMM D, YYYY")
-                    published: date(formatString: "YYYY-MM-DD[T]HH:mm:ss.SSS[Z]")
-                    slug
-                    title
-                    tags
-                    image {
-                        childImageSharp {
-                            fluid(maxWidth: 900, toFormat: JPG) {
-                                src
-                            }
+        blog: markdownRemark(frontmatter: {slug: {eq: $slug }}) {
+            html
+            excerpt(pruneLength: 200)
+            frontmatter {
+                date(formatString: "MMMM D, YYYY")
+                published: date(formatString: "YYYY-MM-DD[T]HH:mm:ss.SSS[Z]")
+                slug
+                title
+                tags
+                image {
+                    childImageSharp {
+                        fluid(maxWidth: 900, toFormat: JPG) {
+                            src
                         }
                     }
                 }
-                fields {
-                    readingTime {
-                        text
-                    }
+            }
+            fields {
+                readingTime {
+                    text
                 }
             }
         }
-        blogs: allFile(
-            filter: {
-                childMarkdownRemark: {frontmatter: {
-                    publish: {eq: true}
-                    slug: {ne: $slug}
-                }}
-                sourceInstanceName: {eq: "blog"}
-                ext: {eq: ".md"}
-            },
-            sort: {order: DESC, fields: childMarkdownRemark___frontmatter___date}
+
+        blogs: allMarkdownRemark(
+            filter: { frontmatter: {
+                publish: {eq: true}
+                slug: {ne: $slug}
+            }}
+            sort: {order: DESC, fields: frontmatter___date}
             limit: 3
         ) {
             ...BlogList
         }
+
         profile: file(relativePath: { eq: "profile.jpg" }) {
             ...SmallProfileImage
         }

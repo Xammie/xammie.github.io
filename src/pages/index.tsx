@@ -27,15 +27,14 @@ export default function Home({data}) {
 
 export const pageQuery = graphql`
     {
-        blogs: allFile(
-            filter: {
-                sourceInstanceName: {eq: "blog"}, ext: {eq: ".md"}
-                childMarkdownRemark: {frontmatter: {publish: {eq: true}}}
-            },
-            sort: {order: DESC, fields: childMarkdownRemark___frontmatter___date},
+        blogs: allMarkdownRemark(
+            filter: {frontmatter: {publish: {eq: true}}}
+            sort: {order: DESC, fields: frontmatter___date}
+            limit: 3
         ) {
             ...BlogList
         }
+
         profile: file(relativePath: { eq: "profile.jpg" }) {
             ...LargeProfileImage
         }
