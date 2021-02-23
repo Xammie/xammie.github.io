@@ -39,7 +39,6 @@ module.exports = {
             },
         },
         `gatsby-plugin-offline`,
-        `gatsby-transformer-json`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -170,35 +169,27 @@ module.exports = {
                 `,
                 feeds: [
                     {
-                        serialize: ({query: {site, allFile}}) => {
-                            return allFile.nodes.map(node => {
-                                return Object.assign({}, node.remark.frontmatter, {
-                                    description: node.remark.excerpt,
-                                    date: node.remark.frontmatter.date,
-                                    url: site.siteMetadata.siteUrl + node.remark.frontmatter.slug,
-                                    guid: site.siteMetadata.siteUrl + node.remark.frontmatter.slug,
-                                    custom_elements: [{"content:encoded": node.remark.html}],
-                                })
-                            })
-                        },
+                        serialize: ({query: {site, blogs}}) => blogs.nodes.map(node => ({
+                            title: node.frontmatter.title,
+                            description: node.excerpt,
+                            date: node.frontmatter.date,
+                            url: site.siteMetadata.siteUrl + node.frontmatter.slug,
+                            guid: site.siteMetadata.siteUrl + node.frontmatter.slug,
+                            custom_elements: [{"content:encoded": node.html}],
+                        })),
                         query: `
                             {
-                                allFile(
-                                    filter: {
-                                        sourceInstanceName: {eq: "blog"}, ext: {eq: ".md"}
-                                        childMarkdownRemark: {frontmatter: {publish: {eq: true}}}
-                                    },
-                                    sort: {order: DESC, fields: childMarkdownRemark___frontmatter___date}
+                                blogs: allMarkdownRemark(
+                                    filter: {frontmatter: {publish: {eq: true}}}
+                                    sort: {order: DESC, fields: frontmatter___date}
                                 ) {
                                     nodes {
-                                        remark: childMarkdownRemark {
-                                            excerpt
-                                            html
-                                            frontmatter {
-                                                title
-                                                date
-                                                slug
-                                            }
+                                        excerpt
+                                        html
+                                        frontmatter {
+                                            title
+                                            date
+                                            slug
                                         }
                                     }
                                 }
