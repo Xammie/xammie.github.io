@@ -1,9 +1,9 @@
 import React from 'react';
-import Surface from '../components/Surface';
-import Container from "../components/Container";
+import Surface from './Surface';
+import Container from "../Container";
 
 export default {
-    title: 'Components/Surface',
+    title: 'Surface',
     decorators: [(Story) => <Container><Story/></Container>],
     parameters: {
         layout: 'fullscreen',

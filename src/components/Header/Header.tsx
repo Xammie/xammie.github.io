@@ -1,8 +1,8 @@
 import React from "react";
-import Surface from "./Surface";
-import Profile from "./Profile";
+import Surface from "../Surface";
+import Profile from "../Profile";
 import Link from "gatsby-link";
-import Socials from "./Socials";
+import Socials from "../Socials";
 
 export default function Header({image}) {
     return (

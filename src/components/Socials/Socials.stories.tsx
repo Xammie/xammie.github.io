@@ -1,8 +1,8 @@
 import React from 'react';
-import Socials from '../components/Socials';
+import Socials from './Socials';
 
 export default {
-    title: 'Components/Socials',
+    title: 'Socials',
     decorators: [(Story) => <div className="flex"><Story/></div>],
     parameters: {
         layout: 'centered',

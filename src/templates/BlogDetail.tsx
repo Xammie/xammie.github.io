@@ -3,7 +3,7 @@ import {graphql} from "gatsby"
 import Container from "../components/Container";
 import Surface from "../components/Surface";
 import Layout from "../components/Layout";
-import List from "../components/Blog/List";
+import Blog from "../components/Blog";
 import Header from "../components/Header";
 import Tags from "../components/Tags";
 import Footer from "../components/Footer";
@@ -11,7 +11,7 @@ import Divider from "../components/Divider";
 import Img from "gatsby-image";
 import Seo from "../components/Seo";
 
-export default function BlogDetail({data}) {
+export default function ({data}) {
     const {frontmatter, html, excerpt, fields} = data.blog;
 
     return (
@@ -47,7 +47,7 @@ export default function BlogDetail({data}) {
                         <article className="markdown"
                                  dangerouslySetInnerHTML={{__html: html}}/>
                     </Surface>
-                    {data.blogs.nodes.length > 0 && <List title="Other blogs" data={data.blogs}/>}
+                    {data.blogs.nodes.length > 0 && <Blog title="Other blogs" data={data.blogs}/>}
                 </div>
                 <Footer/>
             </Container>

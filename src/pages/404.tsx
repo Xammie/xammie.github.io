@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 import Container from "../components/Container";
 import Button from "../components/Button";
 
-export default function NotFound() {
+export default function () {
     return (
         <Layout>
             <Helmet>

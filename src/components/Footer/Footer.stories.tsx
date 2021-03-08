@@ -1,9 +1,9 @@
 import React from 'react';
-import Footer from "../components/Footer";
-import Container from "../components/Container";
+import Footer from "./Footer";
+import Container from "../Container";
 
 export default {
-    title: 'Layout/Footer',
+    title: 'Footer',
     decorators: [(Story) => <Container><Story/></Container>],
     parameters: {
         layout: 'fullscreen',

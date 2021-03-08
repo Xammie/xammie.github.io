@@ -1,9 +1,9 @@
 import React from 'react';
-import Container from "../components/Container";
-import Surface from "../components/Surface";
+import Container from "../Container";
+import Surface from "../Surface";
 
 export default {
-    title: 'Layout/Markdown',
+    title: 'Markdown',
     decorators: [(Story) => (
         <Container>
             <Surface>

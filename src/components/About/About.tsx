@@ -1,9 +1,9 @@
-import Profile from "./Profile";
-import EnriseLight from "../img/enrise-light.svg";
-import EnriseDark from "../img/enrise-dark.svg";
-import Surface from "./Surface";
+import Profile from "../Profile";
+import EnriseLight from "../../img/enrise-light.svg";
+import EnriseDark from "../../img/enrise-dark.svg";
+import Surface from "../Surface";
 import React from "react";
-import Socials from "./Socials";
+import Socials from "../Socials";
 
 export default function About({image}) {
     return (

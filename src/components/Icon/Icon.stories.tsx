@@ -1,9 +1,9 @@
 import React from 'react';
-import IconComponent from "../components/Icon";
-import Github from "../img/github.svg";
+import IconComponent from "./Icon";
+import Github from "../../img/github.svg";
 
 export default {
-    title: 'Components/Icon',
+    title: 'Icon',
     parameters: {
         layout: 'centered',
     },

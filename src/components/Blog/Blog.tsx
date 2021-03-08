@@ -1,10 +1,10 @@
 import React from "react";
 import Surface from "../Surface";
-import Button from "../Button";
+import Button from "../Button/Button";
 import Item from "./Item";
 import {graphql} from "gatsby";
 
-export default function List({title = 'Blog posts', data}) {
+export default function Blog({title = 'Blog posts', data}) {
     return (
         <Surface>
             <h2 className="font-bold text-xl md:text-2xl">{title}</h2>

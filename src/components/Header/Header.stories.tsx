@@ -1,10 +1,10 @@
 import React from 'react';
-import HeaderComponent from '../components/Header';
-import image from '../img/profile.jpg';
-import Container from "../components/Container";
+import HeaderComponent from './Header';
+import image from '../../img/profile.jpg';
+import Container from "../Container";
 
 export default {
-    title: 'Layout/Header',
+    title: 'Header',
     decorators: [(Story) => <Container><Story/></Container>],
     parameters: {
         layout: 'fullscreen',

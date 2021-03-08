@@ -1,8 +1,8 @@
 import React from 'react';
-import ButtonComponent from '../components/Button';
+import ButtonComponent from './Button';
 
 export default {
-    title: 'Components/Button',
+    title: 'Button',
     argTypes: {
         children: {
             name: 'Text',

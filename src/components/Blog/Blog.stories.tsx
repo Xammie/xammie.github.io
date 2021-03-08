@@ -1,11 +1,9 @@
 import React from 'react';
-import Item from "../components/Blog/Item";
-import Surface from "../components/Surface";
-import List from "../components/Blog/List";
-import Container from "../components/Container";
+import BlogComponent from "./Blog";
+import Container from "../Container";
 
 export default {
-    title: 'Layout/Blog',
+    title: 'Blog',
     decorators: [(Story) => <Container><Story/></Container>],
     parameters: {
         layout: 'fullscreen',
@@ -22,6 +20,4 @@ const data = {
     excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur venenatis dignissim leo et pulvinar. Praesent dictum congue luctus. In consequat velit ut tempus tristique. Maecenas eget justo tortor.',
 };
 
-export const BlogList = () => <List data={{nodes: [data, data, data], pageInfo: {hasNextPage: true}}}/>
-
-export const BlogItem = () => <Surface><Item data={data}/></Surface>
+export const Blog = () => <BlogComponent data={{nodes: [data, data, data], pageInfo: {hasNextPage: true}}}/>

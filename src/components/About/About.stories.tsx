@@ -1,10 +1,10 @@
 import React from 'react';
-import AboutComponent from "../components/About";
-import image from "../img/profile.jpg";
-import Container from "../components/Container";
+import AboutComponent from "./About";
+import image from "../../img/profile.jpg";
+import Container from "../Container";
 
 export default {
-    title: 'Layout/About',
+    title: 'About',
     decorators: [(Story) => <Container><Story/></Container>],
     parameters: {
         layout: 'fullscreen',

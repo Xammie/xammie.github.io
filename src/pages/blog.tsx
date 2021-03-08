@@ -1,14 +1,14 @@
 import React from "react"
 import Layout from "../components/Layout";
 import Container from "../components/Container";
-import List from "../components/Blog/List";
+import Blog from "../components/Blog";
 import {graphql} from "gatsby";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Img from "gatsby-image";
 import Seo from "../components/Seo";
 
-export default function Blog({data}) {
+export default function ({data}) {
     return (
         <Layout>
             <Seo title="Blog"/>
@@ -17,7 +17,7 @@ export default function Blog({data}) {
                     <Header image={<Img alt="Max Hoogenbosch"
                                         title="This is me :)"
                                         fluid={data.profile.childImageSharp.fluid}/>}/>
-                    <List data={data.blogs}/>
+                    <Blog data={data.blogs}/>
                 </div>
                 <Footer/>
             </Container>

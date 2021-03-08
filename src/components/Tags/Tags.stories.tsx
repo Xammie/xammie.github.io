@@ -1,9 +1,9 @@
 import React from 'react';
-import TagsComponent from '../components/Tags';
-import Surface from "../components/Surface";
+import TagsComponent from './Tags';
+import Surface from "../Surface";
 
 export default {
-    title: 'Components/Tags',
+    title: 'Tags',
     parameters: {
         layout: 'centered',
     },
