@@ -1,16 +1,16 @@
 import React from 'react';
 import Container from "../components/Container";
-import Card from "../components/Card";
+import Surface from "../components/Surface";
 
 export default {
     title: 'Layout/Markdown',
     decorators: [(Story) => (
         <Container>
-            <Card>
+            <Surface>
                 <article className="markdown">
                     <Story/>
                 </article>
-            </Card>
+            </Surface>
         </Container>
     )],
 };

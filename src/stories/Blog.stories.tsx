@@ -1,6 +1,6 @@
 import React from 'react';
 import Item from "../components/Blog/Item";
-import Card from "../components/Card";
+import Surface from "../components/Surface";
 import List from "../components/Blog/List";
 import Container from "../components/Container";
 
@@ -24,4 +24,4 @@ const data = {
 
 export const BlogList = () => <List data={{nodes: [data, data, data], pageInfo: {hasNextPage: true}}}/>
 
-export const BlogItem = () => <Card><Item data={data}/></Card>
+export const BlogItem = () => <Surface><Item data={data}/></Surface>

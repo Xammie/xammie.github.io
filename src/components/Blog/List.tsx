@@ -1,12 +1,12 @@
 import React from "react";
-import Card from "../Card";
+import Surface from "../Surface";
 import Button from "../Button";
 import Item from "./Item";
 import {graphql} from "gatsby";
 
 export default function List({title = 'Blog posts', data}) {
     return (
-        <Card>
+        <Surface>
             <h2 className="font-bold text-xl md:text-2xl">{title}</h2>
             <div className="space-y-3 mt-2">
                 {data.nodes.map((data, index) => <Item data={data} key={index}/>)}
@@ -17,7 +17,7 @@ export default function List({title = 'Blog posts', data}) {
                     View all
                 </Button>
             </div>}
-        </Card>
+        </Surface>
     )
 }
 

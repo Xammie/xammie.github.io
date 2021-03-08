@@ -1,13 +1,13 @@
 import React from 'react';
 import TagsComponent from '../components/Tags';
-import Card from "../components/Card";
+import Surface from "../components/Surface";
 
 export default {
     title: 'Components/Tags',
     parameters: {
         layout: 'centered',
     },
-    decorators: [(Story) => <Card><Story/></Card>],
+    decorators: [(Story) => <Surface><Story/></Surface>],
 };
 
 export const Tags = () => <TagsComponent tags={['Test', 'Storybook', 'Hoogenbosch']}/>

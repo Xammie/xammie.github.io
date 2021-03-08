@@ -1,9 +1,9 @@
 import React from 'react';
-import Card from '../components/Card';
+import Surface from '../components/Surface';
 import Container from "../components/Container";
 
 export default {
-    title: 'Components/Card',
+    title: 'Components/Surface',
     decorators: [(Story) => <Container><Story/></Container>],
     parameters: {
         layout: 'fullscreen',
@@ -17,6 +17,6 @@ export default {
     },
 };
 
-export {Card};
+export {Surface};
 
 

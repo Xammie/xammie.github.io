@@ -1,7 +1,7 @@
 import React from "react"
 import {graphql} from "gatsby"
 import Container from "../components/Container";
-import Card from "../components/Card";
+import Surface from "../components/Surface";
 import Layout from "../components/Layout";
 import List from "../components/Blog/List";
 import Header from "../components/Header";
@@ -27,7 +27,7 @@ export default function BlogDetail({data}) {
                     <Header image={<Img alt="Max Hoogenbosch"
                                         title="This is me :)"
                                         fluid={data.profile.childImageSharp.fluid}/>}/>
-                    <Card>
+                    <Surface>
                         <div className="text-sm whitespace-nowrap text-gray-500 dark:text-gray-300 md:hidden">
                             {frontmatter.date}
                         </div>
@@ -46,7 +46,7 @@ export default function BlogDetail({data}) {
                         </h1>
                         <article className="markdown"
                                  dangerouslySetInnerHTML={{__html: html}}/>
-                    </Card>
+                    </Surface>
                     {data.blogs.nodes.length > 0 && <List title="Other blogs" data={data.blogs}/>}
                 </div>
                 <Footer/>
