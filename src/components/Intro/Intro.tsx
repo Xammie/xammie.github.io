@@ -5,7 +5,7 @@ import Surface from "../Surface";
 import React from "react";
 import Socials from "../Socials";
 
-export default function About({image}) {
+export default function Intro({image}) {
     return (
         <>
             <div className="block md:hidden p-5 flex-center">

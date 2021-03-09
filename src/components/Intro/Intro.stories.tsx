@@ -1,14 +1,14 @@
 import React from 'react';
-import AboutComponent from "./About";
+import IntroComponent from "./Intro";
 import image from "../../img/profile.jpg";
 import Container from "../Container";
 
 export default {
-    title: 'About',
+    title: 'Intro',
     decorators: [(Story) => <Container><Story/></Container>],
     parameters: {
         layout: 'fullscreen',
     },
 };
 
-export const About = () => <AboutComponent image={<img src={image}/>}/>
+export const Intro = () => <IntroComponent image={<img src={image}/>}/>

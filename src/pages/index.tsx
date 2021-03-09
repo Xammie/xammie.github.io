@@ -4,7 +4,7 @@ import Container from "../components/Container";
 import Blog from "../components/Blog";
 import {graphql} from "gatsby";
 import Footer from "../components/Footer";
-import About from "../components/About";
+import Intro from "../components/Intro";
 import Img from "gatsby-image";
 import Seo from "../components/Seo";
 
@@ -14,7 +14,7 @@ export default function ({data}) {
             <Seo/>
             <Container className="flex flex-col justify-between">
                 <div>
-                    <About image={<Img alt="Max Hoogenbosch"
+                    <Intro image={<Img alt="Max Hoogenbosch"
                                        title="This is me :)"
                                        fluid={data.profile.childImageSharp.fluid}/>}/>
                     <Blog data={data.blogs}/>
