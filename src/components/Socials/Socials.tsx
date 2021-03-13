@@ -6,7 +6,7 @@ import React from "react";
 
 export default function Socials() {
     return (
-        <>
+        <div className="flex" role="navigation" aria-label="Links">
             <Icon title="My Github"
                   rel="noopener"
                   href="https://github.com/Xammie">
@@ -22,6 +22,6 @@ export default function Socials() {
                   href="https://twitter.com/maxhoogenbosch">
                 <Twitter className="h-8"/>
             </Icon>
-        </>
+        </div>
     )
 }
