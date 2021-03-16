@@ -19,8 +19,8 @@
   "dependencies": {
     "@react-hook/window-size": "^3.0.7",
     "@svgr/webpack": "^5.5.0",
-    "@tailwindcss/postcss7-compat": "npm:@tailwindcss/postcss7-compat",
-    "autoprefixer": "^10.2.4",
+    "@tailwindcss/jit": "^0.1.1",
+    "autoprefixer": "^10.2.5",
     "classnames": "^2.2.6",
     "gatsby": "^2.27.1",
     "gatsby-image": "^2.6.0",
@@ -41,12 +41,13 @@
     "gatsby-transformer-remark": "^2.14.0",
     "gatsby-transformer-sharp": "^2.7.0",
     "lodash": "^4.17.20",
-    "postcss": "^7",
+    "postcss": "^8.2.8",
     "prismjs": "^1.23.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
+    "storybook-dark-mode": "^1.0.7",
+    "tailwindcss": "^2.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -54,6 +55,7 @@
     "@storybook/addon-essentials": "^6.1.11",
     "@storybook/addon-google-analytics": "^6.1.18",
     "@storybook/addon-links": "^6.1.11",
+    "@storybook/addon-postcss": "^2.0.0",
     "@storybook/addons": "^6.1.18",
     "@storybook/react": "^6.1.11",
     "@types/classnames": "^2.2.11",

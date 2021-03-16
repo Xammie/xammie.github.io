@@ -3,12 +3,34 @@ module.exports = {
         '../src/**/*.stories.@(js|jsx|ts|tsx)'
     ],
     addons: [
+        {
+            name: '@storybook/addon-postcss',
+            options: {
+                postcssLoaderOptions: {
+                    implementation: require('postcss'),
+                },
+            },
+        },
         '@storybook/addon-links',
         '@storybook/addon-essentials',
-        'storybook-addon-themes',
         '@storybook/addon-google-analytics',
+        'storybook-addon-themes',
+        'storybook-dark-mode',
     ],
     webpackFinal: async config => {
+        let foundCss = 0;
+
+        // Remove the existing css rule
+        config.module.rules = config.module.rules.filter(f => {
+            if (f.test.toString() === '/\\.css$/') {
+                if (foundCss > 0) {
+                    return false;
+                }
+                foundCss++;
+            }
+            return true;
+        });
+
         // Transpile Gatsby module because Gatsby includes un-transpiled ES6 code.
         config.module.rules[0].exclude = [/node_modules\/(?!(gatsby)\/)/]
         // use installed babel-loader which is v8.0-beta (which is meant to work with @babel/core@7)
