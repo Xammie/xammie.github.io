@@ -11,4 +11,4 @@ export default {
     },
 };
 
-export const Header = () => <HeaderComponent image={<img src={image}/>}/>
+export const Header = () => <HeaderComponent image={<img alt="Max" src={image}/>}/>

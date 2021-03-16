@@ -22,15 +22,13 @@ export default function ThemeToggle() {
     }
 
     return (
-        <div className="absolute right-0 top-0 p-5 hidden md:block">
-            <button className="clickable rounded-full p-2 focus:outline-none"
-                    onClick={onToggle}
-                    aria-label="Switch theme"
-                    aria-checked={isDarkMode ? 'true' : 'false'}
-                    role="switch"
-                    title={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}>
-                {isDarkMode ? <Sun className="w-8 h-8"/> : <Moon className="w-8 h-8"/>}
-            </button>
-        </div>
+        <button className="clickable rounded-full p-2 focus:outline-none"
+                onClick={onToggle}
+                aria-label="Switch theme"
+                aria-checked={isDarkMode ? 'true' : 'false'}
+                role="switch"
+                title={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}>
+            {isDarkMode ? <Sun className="w-8 h-8"/> : <Moon className="w-8 h-8"/>}
+        </button>
     );
 }
