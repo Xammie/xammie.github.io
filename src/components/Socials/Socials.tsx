@@ -7,17 +7,17 @@ import React from "react";
 export default function Socials() {
     return (
         <div className="flex" role="navigation" aria-label="Links">
-            <Icon title="My Github"
+            <Icon title="GitHub"
                   rel="noopener"
                   href="https://github.com/Xammie">
                 <Github className="h-8"/>
             </Icon>
-            <Icon title="My LinkedIn"
+            <Icon title="LinkedIn"
                   rel="noopener"
                   href="https://www.linkedin.com/in/maxhoogenbosch/">
                 <Linkedin className="h-8"/>
             </Icon>
-            <Icon title="My Twitter"
+            <Icon title="Twitter"
                   rel="noopener"
                   href="https://twitter.com/maxhoogenbosch">
                 <Twitter className="h-8"/>

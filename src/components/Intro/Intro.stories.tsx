@@ -11,4 +11,4 @@ export default {
     },
 };
 
-export const Intro = () => <IntroComponent image={<img src={image}/>}/>
+export const Intro = () => <IntroComponent image={<img alt="Max" src={image}/>}/>

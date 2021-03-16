@@ -21,6 +21,7 @@ export default function Intro({image}) {
                         Full stack developer at
                         <a href="https://enrise.com"
                            rel="noopener"
+                           aria-label="View website of enrise"
                            className="block md:inline h-12 p-2 mx-1 rounded clickable">
                             <EnriseLight className="dark:hidden" width={null} height="100%"/>
                             <EnriseDark className="hidden dark:block" width={null} height="100%"/>

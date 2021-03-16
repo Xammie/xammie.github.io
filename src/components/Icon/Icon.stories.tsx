@@ -13,6 +13,7 @@ export const Icon = (args) => (
     <IconComponent {...args}
                    href="#"
                    component="a"
+                   aria-label="Github"
                    onClick={e => e.preventDefault()}>
         <Github className="h-8"/>
     </IconComponent>
