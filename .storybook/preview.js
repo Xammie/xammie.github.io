@@ -1,6 +1,9 @@
-import '../src/css/index.css';
-import '../src/css/prism.css';
 import {action} from "@storybook/addon-actions";
+import {themes} from '@storybook/theming';
+import React from 'react';
+import Layout from "/src/components/Layout";
+import '/src/css/index.css';
+import '/src/css/prism.css';
 
 // Gatsby's Link overrides:
 // Gatsby Link calls the `enqueue` & `hovering` methods on the global variable ___loader.
@@ -20,25 +23,15 @@ window.___navigate = pathname => {
     action("NavigateTo:")(pathname)
 }
 
+const theme = {
+    brandTitle: 'hoogenbos.ch',
+    brandUrl: 'https://hoogenbos.ch',
+}
+
 export const parameters = {
+    layout: 'fullscreen',
     actions: {
         argTypesRegex: '^on[A-Z].*',
-    },
-    themes: {
-        clearable: false,
-        list: [
-            {
-                name: 'Dark',
-                class: ['dark', 'text-reading', 'bg-background'],
-                color: '#000000',
-                default: true,
-            },
-            {
-                name: 'Light',
-                class: ['text-background', 'bg-gray-100'],
-                color: '#ffffff',
-            },
-        ],
     },
     backgrounds: {
         disable: true,
@@ -48,4 +41,14 @@ export const parameters = {
             hidden: true,
         },
     },
-}
+    darkMode: {
+        stylePreview: true,
+        classTarget: 'html',
+        dark: {...themes.dark, ...theme},
+        light: {...themes.normal, ...theme}
+    }
+};
+
+export const decorators = [
+    Story => <Layout><Story/></Layout>,
+];

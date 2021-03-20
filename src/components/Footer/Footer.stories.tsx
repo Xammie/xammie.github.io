@@ -4,10 +4,7 @@ import Container from "../Container";
 
 export default {
     title: 'Footer',
-    decorators: [(Story) => <Container><Story/></Container>],
-    parameters: {
-        layout: 'fullscreen',
-    },
+    decorators: [Story => <Container><Story/></Container>],
 };
 
 export {Footer};

@@ -3,10 +3,7 @@ import Socials from './Socials';
 
 export default {
     title: 'Socials',
-    decorators: [(Story) => <div className="flex"><Story/></div>],
-    parameters: {
-        layout: 'centered',
-    },
+    decorators: [Story => <div className="p-8"><Story/></div>],
 };
 
 export {Socials}

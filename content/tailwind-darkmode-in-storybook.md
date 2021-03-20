@@ -2,7 +2,6 @@
 title:   "Use Tailwind CSS dark mode in Storybook"
 slug:    "/blog/use-tailwind-darkmode-in-storybook/"
 date:    "2021-02-16"
-tags:    ["Tailwindcss", "Storybook",  "Darkmode"]
 image:   "assets/storybook-darkmode.png"
 publish: true
 ---
@@ -64,7 +63,4 @@ export const parameters = {
 
 The dark theme will add the class `dark` to the body when active. This enables the Tailwind CSS dark mode.
 
-And that's it! ✨ You can now switch between dark and light theme in
-Storybook.
-
-[Click here for a working demo](/storybook/).
+And that's it! ✨ You can now switch between dark and light theme in Storybook.

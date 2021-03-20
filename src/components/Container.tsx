@@ -1,9 +1,8 @@
 import React from "react";
-import classNames from "classnames";
 
-export default function Container({children, className, ...props}: React.PropsWithChildren<React.HTMLAttributes<any>>) {
+export default function Container({children, ...props}: React.PropsWithChildren<React.HTMLAttributes<any>>) {
     return (
-        <div className={classNames(className, "container min-h-screen max-w-screen-md p-5")}
+        <div className="container min-h-screen max-w-screen-md pb-5 md:py-6 flex flex-col space-y-5 md:space-y-6"
              {...props}>
             {children}
         </div>

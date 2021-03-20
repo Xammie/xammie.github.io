@@ -15,7 +15,6 @@ module.exports = {
         '@storybook/addon-essentials',
         '@storybook/addon-a11y',
         '@storybook/addon-google-analytics',
-        'storybook-addon-themes',
         'storybook-dark-mode',
     ],
     webpackFinal: async config => {

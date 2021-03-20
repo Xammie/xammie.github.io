@@ -12,13 +12,11 @@ export default function ({data}) {
     return (
         <Layout>
             <Seo/>
-            <Container className="flex flex-col justify-between">
-                <div>
-                    <Intro image={<Img alt="Max Hoogenbosch"
-                                       title="This is me :)"
-                                       fluid={data.profile.childImageSharp.fluid}/>}/>
-                    <Blog data={data.blogs}/>
-                </div>
+            <Container>
+                <Intro image={<Img alt="Max Hoogenbosch"
+                                   title="This is me :)"
+                                   fluid={data.profile.childImageSharp.fluid}/>}/>
+                <Blog data={data.blogs}/>
                 <Footer/>
             </Container>
         </Layout>

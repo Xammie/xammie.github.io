@@ -1,12 +1,10 @@
 import React from 'react';
 import IconComponent from "./Icon";
-import Github from "../../img/github.svg";
+import Github from "/src/img/github.svg";
 
 export default {
     title: 'Icon',
-    parameters: {
-        layout: 'centered',
-    },
+    decorators: [Story => <div className="p-8"><Story/></div>],
 };
 
 export const Icon = (args) => (

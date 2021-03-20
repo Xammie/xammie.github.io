@@ -100,67 +100,6 @@ pre.line-numbers > code {
     text-align: right;
 }
 
-/* Toolbar for copying */
-
-div.code-toolbar {
-    position: relative;
-}
-
-div.code-toolbar > .toolbar {
-    position: absolute;
-    top: 0.3em;
-    right: 0.2em;
-    transition: opacity 0.3s ease-in-out;
-    opacity: 0;
-}
-
-div.code-toolbar:hover > .toolbar {
-    opacity: 1;
-}
-
-div.code-toolbar > .toolbar .toolbar-item {
-    display: inline-block;
-    padding-right: 20px;
-}
-
-div.code-toolbar > .toolbar a {
-    cursor: pointer;
-}
-
-div.code-toolbar > .toolbar button {
-    background: none;
-    border: 0;
-    color: inherit;
-    font: inherit;
-    line-height: normal;
-    overflow: visible;
-    padding: 0;
-    -webkit-user-select: none; /* for button */
-    -moz-user-select: none;
-    -ms-user-select: none;
-}
-
-div.code-toolbar > .toolbar a,
-div.code-toolbar > .toolbar button,
-div.code-toolbar > .toolbar span {
-    color: var(--foreground);
-    font-size: 0.8em;
-    padding: 0.5em;
-    background: var(--comment);
-    border-radius: 0.5em;
-}
-
-div.code-toolbar > .toolbar a:hover,
-div.code-toolbar > .toolbar a:focus,
-div.code-toolbar > .toolbar button:hover,
-div.code-toolbar > .toolbar button:focus,
-div.code-toolbar > .toolbar span:hover,
-div.code-toolbar > .toolbar span:focus {
-    color: inherit;
-    text-decoration: none;
-    background-color: var(--green);
-}
-
 /* Remove text shadow for printing */
 
 @media print {
@@ -198,7 +137,6 @@ pre[class*="language-"] {
 
 pre[class*="language-"] {
     background: var(--background);
-    border-radius: 0.5em;
     overflow: auto;
     height: auto;
 }

@@ -5,7 +5,7 @@ import Img from "gatsby-image";
 export default function Item({data}) {
     return (
         <Link to={data.frontmatter.slug}
-              className="rounded-lg p-2 clickable block flex flex-col hover:shadow-md">
+              className="rounded-lg -mx-2 p-2 clickable block flex flex-col hover:shadow-md">
             {data.frontmatter.image?.childImageSharp &&
             <Img className="rounded-lg shadow-md mb-3"
                  fluid={data.frontmatter.image.childImageSharp.fluid}/>}

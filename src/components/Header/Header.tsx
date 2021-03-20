@@ -6,7 +6,7 @@ import Socials from "../Socials";
 
 export default function Header({image}) {
     return (
-        <Surface className="flex items-center justify-between" rounded="rounded-full">
+        <Surface className="flex items-center justify-between" rounded="md:rounded-full">
             <Link to="/"
                   className="flex-center rounded-full clickable pr-3 overflow-hidden">
                 <Profile image={image} className="w-12 h-12 mr-3"/>

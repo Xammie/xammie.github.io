@@ -5,10 +5,10 @@ interface Props extends React.PropsWithChildren<React.HTMLAttributes<any>> {
     rounded?: string
 }
 
-export default function Surface({children, className, rounded = "rounded-xl", ...props}: Props) {
+export default function Surface({children, className, rounded = "md:rounded-xl", ...props}: Props) {
     return (
         <div
-            className={classNames(className, "text-surface dark:text-reading bg-white dark:bg-surface p-3 md:p-5 mb-5 shadow-md", rounded)}
+            className={classNames(className, "text-surface dark:text-reading bg-white dark:bg-surface px-4 py-5 md:p-6 md:mx-5 lg:mx-0 shadow", rounded)}
             {...props}>
             {children}
         </div>

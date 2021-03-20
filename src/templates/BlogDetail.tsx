@@ -1,18 +1,16 @@
 import React from "react"
 import {graphql} from "gatsby"
 import Container from "../components/Container";
-import Surface from "../components/Surface";
 import Layout from "../components/Layout";
 import Blog from "../components/Blog";
 import Header from "../components/Header";
-import Tags from "../components/Tags";
 import Footer from "../components/Footer";
-import Divider from "../components/Divider";
 import Img from "gatsby-image";
 import Seo from "../components/Seo";
+import Article from "../components/Article";
 
 export default function ({data}) {
-    const {frontmatter, html, excerpt, fields} = data.blog;
+    const {frontmatter, html, excerpt} = data.blog;
 
     return (
         <Layout>
@@ -22,33 +20,14 @@ export default function ({data}) {
                  tags={frontmatter.tags}
                  published={frontmatter.published}
                  article/>
-            <Container className="flex flex-col justify-between">
-                <div>
-                    <Header image={<Img alt="Max Hoogenbosch"
-                                        title="This is me :)"
-                                        fluid={data.profile.childImageSharp.fluid}/>}/>
-                    <Surface>
-                        <div className="text-sm whitespace-nowrap text-gray-500 dark:text-gray-300 md:hidden">
-                            {frontmatter.date}
-                        </div>
-                        <div className="text-sm flex-wrap items-center hidden md:flex mb-4">
-                            <div className="whitespace-nowrap py-1 md:py-0">{frontmatter.date}</div>
-                            <Divider/>
-                            <div className="whitespace-nowrap py-1 md:py-0">{fields.readingTime.text}</div>
-                            {frontmatter.tags.length > 0 &&
-                            <>
-                                <Divider/>
-                                <Tags tags={frontmatter.tags}/>
-                            </>}
-                        </div>
-                        <h1 className="font-bold text-xl md:text-3xl mb-4 leading-tight">
-                            {frontmatter.title}
-                        </h1>
-                        <article className="markdown"
-                                 dangerouslySetInnerHTML={{__html: html}}/>
-                    </Surface>
-                    {data.blogs.nodes.length > 0 && <Blog title="Other blogs" data={data.blogs}/>}
-                </div>
+            <Container>
+                <Header image={<Img alt="Max Hoogenbosch"
+                                    title="This is me :)"
+                                    fluid={data.profile.childImageSharp.fluid}/>}/>
+                <Article title={frontmatter.title}
+                         date={frontmatter.date}
+                         content={html}/>
+                {data.blogs.nodes.length > 0 && <Blog title="Other blogs" data={data.blogs}/>}
                 <Footer/>
             </Container>
         </Layout>
@@ -65,18 +44,12 @@ export const pageQuery = graphql`
                 published: date(formatString: "YYYY-MM-DD[T]HH:mm:ss.SSS[Z]")
                 slug
                 title
-                tags
                 image {
                     childImageSharp {
                         fluid(maxWidth: 900, toFormat: JPG) {
                             src
                         }
                     }
-                }
-            }
-            fields {
-                readingTime {
-                    text
                 }
             }
         }

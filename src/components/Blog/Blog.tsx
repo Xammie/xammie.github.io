@@ -29,7 +29,6 @@ export const query = graphql`
                 title
                 slug
                 date(formatString: "MMMM D, YYYY")
-                tags
                 image {
                     childImageSharp {
                         fluid(maxWidth: 700, maxHeight: 200, quality: 70, toFormat: JPG)  {

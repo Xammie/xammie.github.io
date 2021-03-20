@@ -1,7 +1,7 @@
 import Icon from "../Icon";
-import Github from "../../img/github.svg";
-import Linkedin from "../../img/linkedin.svg";
-import Twitter from "../../img/twitter.svg";
+import Github from "/src/img/github.svg";
+import Linkedin from "/src/img/linkedin.svg";
+import Twitter from "/src/img/twitter.svg";
 import React from "react";
 
 export default function Socials() {

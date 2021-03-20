@@ -5,16 +5,14 @@ import ThemeToggle from "../ThemeToggle";
 
 export default function Footer() {
     return (
-        <footer className="flex flex-col-reverse sm:flex-row justify-between items-center">
+        <footer className="flex flex-col-reverse sm:flex-row justify-between items-center md:mx-5">
             <div className="flex items-center">
                 <ThemeToggle/>
-                <div className="ml-5">
+                <div className="ml-2 md:ml-5">
                     &copy; {new Date().getFullYear()} <Link to="/" className="hover:underline">Max Hoogenbosch</Link>
                 </div>
             </div>
-            <div className="flex mb-2 sm:mb-0">
-                <Socials/>
-            </div>
+            <Socials/>
         </footer>
     );
 }

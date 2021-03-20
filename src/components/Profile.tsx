@@ -18,7 +18,7 @@ export const query = graphql`
             }
         }
     }
-    
+
     fragment LargeProfileImage on File {
         childImageSharp {
             fluid(maxWidth: 300, maxHeight: 300, quality: 70, toFormat: JPG) {

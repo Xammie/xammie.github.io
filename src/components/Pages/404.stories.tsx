@@ -3,9 +3,6 @@ import Component from "../../pages/404";
 
 export default {
     title: 'Pages',
-    parameters: {
-        layout: 'fullscreen',
-    }
 };
 
 
