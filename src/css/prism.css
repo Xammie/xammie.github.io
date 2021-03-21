@@ -21,7 +21,6 @@ http://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascr
 /* Scrollbars */
 
 :root {
-    --background: #131313;
     --comment: #808080;
     --foreground: #F8F8F2;
     --selection: #214283;
@@ -112,7 +111,6 @@ pre.line-numbers > code {
 code[class*="language-"],
 pre[class*="language-"] {
     color: var(--foreground);
-    background: var(--background);
     text-shadow: none;
     font-family: PT Mono, Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
     monospace;
@@ -136,14 +134,8 @@ pre[class*="language-"] {
 /* Code blocks */
 
 pre[class*="language-"] {
-    background: var(--background);
     overflow: auto;
     height: auto;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-    background: var(--background);
 }
 
 /* Inline code */

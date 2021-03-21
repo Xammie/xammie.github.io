@@ -32,6 +32,7 @@ module.exports = {
                             boxShadow: theme('boxShadow.lg'),
                         },
                         pre: {
+                            backgroundColor: theme('colors.gray.900'),
                             borderRadius: theme('borderRadius.lg'),
                         },
                         strong: {
@@ -42,8 +43,12 @@ module.exports = {
                             color: theme('colors.blue.600'),
                         },
                         code: {
-                            color: null,
+                            color: theme('colors.reading'),
+                            backgroundColor: theme('colors.gray.900'),
+                            borderRadius: theme('borderRadius.md'),
                             fontWeight: null,
+                            hyphens: 'none',
+                            padding: '4px',
                         },
                         'code::before': {
                             'content': null,
