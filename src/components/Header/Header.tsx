@@ -8,9 +8,9 @@ export default function Header({image}) {
     return (
         <Surface className="flex items-center justify-between" rounded="md:rounded-full">
             <Link to="/"
-                  className="flex-center rounded-full clickable pr-3 overflow-hidden">
-                <Profile image={image} className="w-12 h-12 mr-3"/>
-                <div className="font-bold text-lg md:text-xl truncate">
+                  className="flex-center rounded-full clickable overflow-hidden">
+                <Profile image={image} className="w-10 h-10 md:w-12 md:h-12"/>
+                <div className="font-bold text-lg md:text-xl truncate mx-3">
                     Max Hoogenbosch
                 </div>
             </Link>
