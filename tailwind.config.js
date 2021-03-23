@@ -2,7 +2,6 @@ module.exports = {
     purge: [
         './src/**/*.tsx',
         './*.js',
-        './.storybook/*.js',
     ],
     darkMode: 'class',
     variants: {

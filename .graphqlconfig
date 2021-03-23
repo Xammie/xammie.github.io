@@ -1,6 +1,6 @@
 {
   "projects": {
-    "enrise-frontend": {
+    "hoogenbosch": {
       "schemaPath": "schema.graphql",
       "extensions": {
         "endpoints": {
