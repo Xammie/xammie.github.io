@@ -6,7 +6,7 @@ import React from "react";
 
 export default function Socials() {
     return (
-        <div className="flex" role="navigation" aria-label="Links">
+        <div className="flex -mx-2 space-x-0.5" role="navigation" aria-label="Links">
             <Icon title="GitHub"
                   rel="noopener"
                   href="https://github.com/Xammie">
