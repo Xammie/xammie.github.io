@@ -1,14 +1,14 @@
-import Link from "gatsby-link";
-import React from "react";
-import Img from "gatsby-image";
+import Link from 'gatsby-link';
+import React from 'react';
+import Img from 'gatsby-image';
 
 export default function Item({data}) {
     return (
         <Link to={data.frontmatter.slug}
-              className="rounded-lg -mx-2 p-2 clickable block flex flex-col hover:shadow-md">
+            className="rounded-lg -mx-2 p-2 clickable block flex flex-col hover:shadow-md">
             {data.frontmatter.image?.childImageSharp &&
             <Img className="rounded-lg shadow-md mb-3"
-                 fluid={data.frontmatter.image.childImageSharp.fluid}/>}
+                fluid={data.frontmatter.image.childImageSharp.fluid}/>}
             <div className="flex justify-between md:mb-1">
                 <div className="font-bold text-lg md:mb-0 leading-tight">
                     {data.frontmatter.title}
@@ -20,5 +20,5 @@ export default function Item({data}) {
             <div className="truncate text-gray-500 dark:text-gray-400">{data.excerpt}</div>
             <div className="text-sm text-gray-500 dark:text-gray-400 md:hidden">{data.frontmatter.date}</div>
         </Link>
-    )
+    );
 }

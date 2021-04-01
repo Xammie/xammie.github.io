@@ -1,37 +1,37 @@
-import React from "react"
-import {graphql} from "gatsby"
-import Container from "../components/Container";
-import Layout from "../components/Layout";
-import Blog from "../components/Blog";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Img from "gatsby-image";
-import Seo from "../components/Seo";
-import Article from "../components/Article";
+import React from 'react';
+import {graphql} from 'gatsby';
+import Container from '../components/Container';
+import Layout from '../components/Layout';
+import Blog from '../components/Blog';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Img from 'gatsby-image';
+import Seo from '../components/Seo';
+import Article from '../components/Article';
 
-export default function ({data}) {
+export default function ({data}: any) {
     const {frontmatter, html, excerpt} = data.blog;
 
     return (
         <Layout>
             <Seo title={frontmatter.title}
-                 description={excerpt}
-                 image={frontmatter.image?.childImageSharp?.fluid?.src ?? undefined}
-                 tags={frontmatter.tags}
-                 published={frontmatter.published}
-                 article/>
+                description={excerpt}
+                image={frontmatter.image?.childImageSharp?.fluid?.src ?? undefined}
+                tags={frontmatter.tags}
+                published={frontmatter.published}
+                article/>
             <Container>
                 <Header image={<Img alt="Max Hoogenbosch"
-                                    title="This is me :)"
-                                    fluid={data.profile.childImageSharp.fluid}/>}/>
+                    title="This is me :)"
+                    fluid={data.profile.childImageSharp.fluid}/>}/>
                 <Article title={frontmatter.title}
-                         date={frontmatter.date}
-                         content={html}/>
+                    date={frontmatter.date}
+                    content={html}/>
                 {data.blogs.nodes.length > 0 && <Blog title="Other blogs" data={data.blogs}/>}
                 <Footer/>
             </Container>
         </Layout>
-    )
+    );
 }
 
 export const pageQuery = graphql`
@@ -69,4 +69,4 @@ export const pageQuery = graphql`
             ...SmallProfileImage
         }
     }
-`
+`;

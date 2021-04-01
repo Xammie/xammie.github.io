@@ -6,4 +6,4 @@ export default {
     decorators: [Story => <div className="p-8"><Story/></div>],
 };
 
-export {Socials}
+export {Socials};

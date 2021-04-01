@@ -22,7 +22,7 @@ module.exports = {
 
         // Remove the existing css rule
         config.module.rules = config.module.rules.filter(f => {
-            if (f.test.toString() === '/\\.css$/') {
+            if (f.test && f.test.toString() === '/\\.css$/') {
                 if (foundCss > 0) {
                     return false;
                 }

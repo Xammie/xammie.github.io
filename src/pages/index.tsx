@@ -1,21 +1,21 @@
-import React from "react"
-import Layout from "../components/Layout";
-import Container from "../components/Container";
-import Blog from "../components/Blog";
-import {graphql} from "gatsby";
-import Footer from "../components/Footer";
-import Intro from "../components/Intro";
-import Img from "gatsby-image";
-import Seo from "../components/Seo";
+import React from 'react';
+import Layout from '../components/Layout';
+import Container from '../components/Container';
+import Blog from '../components/Blog';
+import {graphql} from 'gatsby';
+import Footer from '../components/Footer';
+import Intro from '../components/Intro';
+import Img from 'gatsby-image';
+import Seo from '../components/Seo';
 
-export default function ({data}) {
+export default function ({data}: any) {
     return (
         <Layout>
             <Seo/>
             <Container>
                 <Intro image={<Img alt="Max Hoogenbosch"
-                                   title="This is me :)"
-                                   fluid={data.profile.childImageSharp.fluid}/>}/>
+                    title="This is me :)"
+                    fluid={data.profile.childImageSharp.fluid}/>}/>
                 <Blog data={data.blogs}/>
                 <Footer/>
             </Container>
@@ -37,4 +37,4 @@ export const pageQuery = graphql`
             ...LargeProfileImage
         }
     }
-`
+`;

@@ -1,6 +1,6 @@
 import React from 'react';
-import ArticleComponent from "./Article";
-import Container from "../Container";
+import ArticleComponent from './Article';
+import Container from '../Container';
 import imageSrc from '/content/assets/storybook-darkmode.png';
 
 export default {
@@ -16,7 +16,7 @@ export default {
             name: 'Title',
             control: 'text',
             defaultValue: 'January 1, 2021',
-        }
+        },
     },
 };
 

@@ -13,4 +13,4 @@ export default {
     },
 };
 
-export const Button = args => <ButtonComponent {...args} to="/button"/>
+export const Button = args => <ButtonComponent {...args} to="/button"/>;

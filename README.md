@@ -7,7 +7,7 @@ and [tailwindcss](https://tailwindcss.com/).
 
 ## Installation
 
-```shell
+```
 git clone https://github.com/Xammie/xammie.github.io.git
 cd xammie.github.io
 yarn install
@@ -15,15 +15,22 @@ yarn install
 
 ## Development
 
-```shell
-yarn develop
+```
+yarn start
 yarn storybook
 yarn production
 ```
 
+## Code style
+
+```
+yarn lint
+yarn lint --fix
+```
+
 ## Deploying
 
-```shell
+```
 yarn deploy
 ```
 

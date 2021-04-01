@@ -1,9 +1,9 @@
-import Profile from "../Profile";
-import EnriseLight from "/src/img/enrise-light.svg";
-import EnriseDark from "/src/img/enrise-dark.svg";
-import Surface from "../Surface";
-import React from "react";
-import Socials from "../Socials";
+import Profile from '../Profile';
+import EnriseLight from '/src/img/enrise-light.svg';
+import EnriseDark from '/src/img/enrise-dark.svg';
+import Surface from '../Surface';
+import React from 'react';
+import Socials from '../Socials';
 
 export default function Intro({image}) {
     return (
@@ -20,9 +20,9 @@ export default function Intro({image}) {
                     <div className="flex items-center text-lg sm:text-xl md:text-2xl">
                         Full stack developer at
                         <a href="https://enrise.com"
-                           rel="noopener"
-                           aria-label="View website of enrise"
-                           className="block md:inline h-10 sm:h-12 p-2 mx-1 rounded clickable">
+                            rel="noopener"
+                            aria-label="View website of enrise"
+                            className="block md:inline h-10 sm:h-12 p-2 mx-1 rounded clickable">
                             <EnriseLight className="dark:hidden" width={null} height="100%"/>
                             <EnriseDark className="hidden dark:block" width={null} height="100%"/>
                         </a>
@@ -33,5 +33,5 @@ export default function Intro({image}) {
                 </div>
             </Surface>
         </div>
-    )
+    );
 }

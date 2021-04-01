@@ -1,7 +1,7 @@
-import React from "react"
-import {Helmet} from "react-helmet"
-import {useLocation} from "@reach/router"
-import {graphql, useStaticQuery} from "gatsby"
+import React from 'react';
+import {Helmet} from 'react-helmet';
+import {useLocation} from '@reach/router';
+import {graphql, useStaticQuery} from 'gatsby';
 
 interface Props {
     title?: string
@@ -31,12 +31,12 @@ export default function Seo({title, description, image, article, published, tags
         description: description || defaultDescription,
         image: image && `${siteUrl}${image}`,
         url: `${siteUrl}${pathname}`,
-    }
+    };
 
     return (
         <Helmet title={title}
-                titleTemplate={titleTemplate}
-                defaultTitle={defaultTitle}>
+            titleTemplate={titleTemplate}
+            defaultTitle={defaultTitle}>
             <html lang={lang}/>
             <meta charSet="utf-8"/>
             {/* Primary tags */}
@@ -63,7 +63,7 @@ export default function Seo({title, description, image, article, published, tags
             {seo.image && <meta name="twitter:image" content={seo.image}/>}
             {twitterUsername && <meta name="twitter:creator" content={twitterUsername}/>}
         </Helmet>
-    )
+    );
 }
 
 const query = graphql`
@@ -80,4 +80,4 @@ const query = graphql`
             }
         }
     }
-`
+`;

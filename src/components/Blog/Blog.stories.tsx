@@ -1,6 +1,6 @@
 import React from 'react';
-import BlogComponent from "./Blog";
-import Container from "../Container";
+import BlogComponent from './Blog';
+import Container from '../Container';
 
 export default {
     title: 'Blog',
@@ -35,11 +35,11 @@ const data = {
 };
 
 export const Blog = ({count, hasNextPage}) => {
-    let items = []
+    const items = [];
 
     for (let i = 0; i < count; i++) {
         items[i] = data;
     }
 
-    return <BlogComponent data={{nodes: items, pageInfo: {hasNextPage}}}/>
-}
+    return <BlogComponent data={{nodes: items, pageInfo: {hasNextPage}}}/>;
+};

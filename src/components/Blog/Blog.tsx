@@ -1,8 +1,8 @@
-import React from "react";
-import Surface from "../Surface";
-import Button from "../Button/Button";
-import Item from "./Item";
-import {graphql} from "gatsby";
+import React from 'react';
+import Surface from '../Surface';
+import Button from '../Button/Button';
+import Item from './Item';
+import {graphql} from 'gatsby';
 
 export default function Blog({title = 'Blog posts', data}) {
     return (
@@ -18,7 +18,7 @@ export default function Blog({title = 'Blog posts', data}) {
                 </Button>
             </div>}
         </Surface>
-    )
+    );
 }
 
 export const query = graphql`
@@ -42,4 +42,4 @@ export const query = graphql`
             hasNextPage
         }
     }
-`
+`;

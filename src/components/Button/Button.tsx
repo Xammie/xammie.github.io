@@ -1,5 +1,5 @@
-import React, {PropsWithChildren} from "react";
-import Link, {GatsbyLinkProps} from "gatsby-link";
+import React, {PropsWithChildren} from 'react';
+import Link, {GatsbyLinkProps} from 'gatsby-link';
 
 export default function Button({children, ...props}: PropsWithChildren<any | GatsbyLinkProps<any>>) {
     return (

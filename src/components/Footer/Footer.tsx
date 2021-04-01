@@ -1,7 +1,7 @@
-import React from "react";
-import Socials from "../Socials";
-import Link from "gatsby-link";
-import ThemeToggle from "../ThemeToggle";
+import React from 'react';
+import Socials from '../Socials';
+import Link from 'gatsby-link';
+import ThemeToggle from '../ThemeToggle';
 
 export default function Footer() {
     return (
