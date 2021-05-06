@@ -32,7 +32,7 @@ export const pageQuery = graphql`
             ...BlogList
         }
 
-        profile: file(relativePath: { eq: "profile.jpg" }) {
+        profile: file(relativePath: { eq: "profile.png" }) {
             ...SmallProfileImage
         }
     }

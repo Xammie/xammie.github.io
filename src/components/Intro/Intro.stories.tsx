@@ -1,6 +1,6 @@
 import React from 'react';
 import IntroComponent from './Intro';
-import image from '/src/img/profile.jpg';
+import image from '/src/img/profile.png';
 import Container from '../Container';
 
 export default {
