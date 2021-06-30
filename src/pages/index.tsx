@@ -5,17 +5,17 @@ import Blog from '../components/Blog';
 import {graphql} from 'gatsby';
 import Footer from '../components/Footer';
 import Intro from '../components/Intro';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import Seo from '../components/Seo';
 
-export default function ({data}: any) {
+export default function PageHome({data}: any) {
     return (
         <Layout>
             <Seo/>
             <Container>
-                <Intro image={<Img alt="Max Hoogenbosch"
+                <Intro image={<GatsbyImage alt="Max Hoogenbosch"
                     title="This is me :)"
-                    fluid={data.profile.childImageSharp.fluid}/>}/>
+                    image={data.profile.childImageSharp.gatsbyImageData}/>}/>
                 <Blog data={data.blogs}/>
                 <Footer/>
             </Container>

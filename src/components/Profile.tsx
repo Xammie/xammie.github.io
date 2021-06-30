@@ -13,17 +13,13 @@ export default function Profile({image, className}) {
 export const query = graphql`
     fragment SmallProfileImage on File {
         childImageSharp {
-            fluid(maxWidth: 150, maxHeight: 150, quality: 70, toFormat: JPG) {
-                ...GatsbyImageSharpFluid_withWebp
-            }
+            gatsbyImageData(layout: CONSTRAINED, width: 100)
         }
     }
 
     fragment LargeProfileImage on File {
         childImageSharp {
-            fluid(maxWidth: 300, maxHeight: 300, quality: 70, toFormat: JPG) {
-                ...GatsbyImageSharpFluid_withWebp
-            }
+            gatsbyImageData(layout: CONSTRAINED, width: 200)
         }
     }
 `;

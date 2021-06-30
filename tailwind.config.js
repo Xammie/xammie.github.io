@@ -4,6 +4,7 @@ module.exports = {
         './*.js',
     ],
     darkMode: 'class',
+    mode: 'jit',
     variants: {
         extend: {
             display: ['dark'],

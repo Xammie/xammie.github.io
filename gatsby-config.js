@@ -53,8 +53,18 @@ module.exports = {
                 path: `${__dirname}/content/`
             }
         },
+        {
+            resolve: `gatsby-plugin-sharp`,
+            options: {
+                defaults: {
+                    formats: [`auto`, `webp`, `avif`],
+                    placeholder: `blurred`,
+                    breakpoints: [750, 1080, 1366, 1920],
+                }
+            }
+        },
         `gatsby-transformer-sharp`,
-        `gatsby-plugin-sharp`,
+        `gatsby-plugin-image`,
         {
             resolve: `gatsby-plugin-gtag`,
             options: {

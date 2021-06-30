@@ -5,29 +5,30 @@ import Layout from '../components/Layout';
 import Blog from '../components/Blog';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Img from 'gatsby-image';
+import {StaticImage} from 'gatsby-plugin-image';
 import Seo from '../components/Seo';
 import Article from '../components/Article';
 
-export default function ({data}: any) {
+export default function BlogDetail({data}) {
     const {frontmatter, html, excerpt} = data.blog;
 
     return (
         <Layout>
             <Seo title={frontmatter.title}
                 description={excerpt}
-                image={frontmatter.image?.childImageSharp?.fluid?.src ?? undefined}
+                image={frontmatter.image?.childImageSharp?.original?.src}
                 tags={frontmatter.tags}
                 published={frontmatter.published}
                 article/>
             <Container>
-                <Header image={<Img alt="Max Hoogenbosch"
-                    title="This is me :)"
-                    fluid={data.profile.childImageSharp.fluid}/>}/>
+                <Header image={
+                    <StaticImage src="../img/profile.png" alt="Max Hoogenbosch" width={100}
+                        height={100}/>
+                }/>
                 <Article title={frontmatter.title}
                     date={frontmatter.date}
                     content={html}/>
-                {data.blogs.nodes.length > 0 && <Blog title="Other blogs" data={data.blogs}/>}
+                <Blog title="Other blogs" data={data.blogs}/>
                 <Footer/>
             </Container>
         </Layout>
@@ -46,7 +47,7 @@ export const pageQuery = graphql`
                 title
                 image {
                     childImageSharp {
-                        fluid(maxWidth: 900, toFormat: JPG) {
+                        original {
                             src
                         }
                     }
@@ -63,10 +64,6 @@ export const pageQuery = graphql`
             limit: 3
         ) {
             ...BlogList
-        }
-
-        profile: file(relativePath: { eq: "profile.png" }) {
-            ...SmallProfileImage
         }
     }
 `;

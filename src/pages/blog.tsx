@@ -5,17 +5,16 @@ import Blog from '../components/Blog';
 import {graphql} from 'gatsby';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Img from 'gatsby-image';
+import {GatsbyImage} from 'gatsby-plugin-image';
 import Seo from '../components/Seo';
 
-export default function ({data}) {
+export default function PageBlog({data}) {
     return (
         <Layout>
             <Seo title="Blog"/>
             <Container>
-                <Header image={<Img alt="Max Hoogenbosch"
-                    title="This is me :)"
-                    fluid={data.profile.childImageSharp.fluid}/>}/>
+                <Header image={<GatsbyImage alt="Max Hoogenbosch"
+                    image={data.profile.childImageSharp.gatsbyImageData}/>}/>
                 <Blog data={data.blogs}/>
                 <Footer/>
             </Container>

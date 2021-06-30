@@ -3,7 +3,7 @@ import React from 'react';
 import Layout from '../components/Layout';
 import Container from '../components/Container';
 
-export default function () {
+export default function Page404() {
     return (
         <Layout>
             <Helmet>

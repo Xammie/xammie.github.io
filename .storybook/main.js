@@ -84,4 +84,7 @@ module.exports = {
 
         return config;
     },
+    core: {
+        builder: "webpack5",
+    },
 }

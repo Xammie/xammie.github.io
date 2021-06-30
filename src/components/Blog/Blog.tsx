@@ -31,9 +31,7 @@ export const query = graphql`
                 date(formatString: "MMMM D, YYYY")
                 image {
                     childImageSharp {
-                        fluid(maxWidth: 700, maxHeight: 200, quality: 70, toFormat: JPG)  {
-                            ...GatsbyImageSharpFluid_withWebp
-                        }
+                        gatsbyImageData(layout: CONSTRAINED, width: 750, height: 210)
                     }
                 }
             }
