@@ -1,14 +1,13 @@
 import React from 'react';
-import Surface from '../Surface';
 import Button from '../Button/Button';
 import Item from './Item';
-import {graphql} from 'gatsby';
+import { graphql } from 'gatsby';
 
-export default function Blog({title = 'Blog posts', data}) {
+export default function Blog({ title = 'Blog posts', data }) {
     return (
-        <Surface>
-            <h2 className="font-bold text-xl md:text-2xl">{title}</h2>
-            <div className="space-y-3 mt-2">
+        <div>
+            <h2 className="text-xl font-bold md:text-2xl">{title}</h2>
+            <div className="mt-2 space-y-3">
                 {data.nodes.map((data, index) => <Item data={data} key={index}/>)}
             </div>
             {data.pageInfo.hasNextPage &&
@@ -17,21 +16,23 @@ export default function Blog({title = 'Blog posts', data}) {
                     View all
                 </Button>
             </div>}
-        </Surface>
+        </div>
     );
 }
 
 export const query = graphql`
-    fragment BlogList on MarkdownRemarkConnection {
+    fragment BlogList on MdxConnection {
         nodes {
             excerpt(pruneLength: 150)
+            slug
             frontmatter {
                 title
-                slug
                 date(formatString: "MMMM D, YYYY")
                 image {
                     childImageSharp {
-                        gatsbyImageData(layout: CONSTRAINED, width: 750, height: 210)
+                        gatsbyImageData(layout: CONSTRAINED, width: 750, height: 210, transformOptions: {
+                            cropFocus: NORTH
+                        })
                     }
                 }
             }

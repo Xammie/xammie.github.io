@@ -1,22 +1,21 @@
 import React from 'react';
-import Surface from '../Surface';
 import Profile from '../Profile';
 import Link from 'gatsby-link';
 import Socials from '../Socials';
 
-export default function Header({image}) {
+export default function Header({ image }) {
     return (
-        <Surface className="flex items-center justify-between" rounded="md:rounded-full">
+        <div className="flex justify-between items-center">
             <Link to="/"
-                className="flex-center rounded-full clickable overflow-hidden">
+                className="overflow-hidden rounded-full flex-center clickable">
                 <Profile image={image} className="w-10 h-10 md:w-12 md:h-12"/>
-                <div className="font-bold text-lg md:text-xl truncate mx-3">
+                <div className="mx-3 text-lg font-bold md:text-xl truncate">
                     Max Hoogenbosch
                 </div>
             </Link>
-            <div className="hidden sm:flex justify-center items-center">
+            <div className="hidden justify-center items-center sm:flex">
                 <Socials/>
             </div>
-        </Surface>
+        </div>
     );
 }

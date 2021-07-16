@@ -1,36 +1,47 @@
-exports.createPages = async ({actions, graphql, reporter}) => {
-    const {createPage} = actions;
-
-    const result = await graphql(`
+exports.createPages = async ({actions: {createPage}, graphql, reporter}) => {
+    const {data, errors} = await graphql(`
         {
-            blogs: allMarkdownRemark(
-                filter: {frontmatter: {publish: {eq: true}}}
+            blogs: allMdx(
                 sort: {order: ASC, fields: frontmatter___date}
             ) {
                 nodes {
-                    frontmatter {
-                        slug
-                    }
+                    id
+                    slug
                 }
             }
         }
     `);
 
     // Handle errors
-    if (result.errors) {
+    if (errors) {
         reporter.panicOnBuild(`Error while running GraphQL query.`)
         return
     }
 
     const template = require.resolve(`./src/templates/BlogDetail.tsx`);
 
-    result.data.blogs.nodes.forEach(({frontmatter}) => {
+    data.blogs.nodes.forEach(({id, slug}) => {
         createPage({
-            path: frontmatter.slug,
             component: template,
+            path: `/blog/${slug}/`,
             context: {
-                slug: frontmatter.slug,
+                id: id,
             },
         })
     })
 }
+
+// exports.createResolvers = ({createResolvers}) => {
+//     createResolvers({
+//         Mdx: {
+//             path: {
+//                 type: "String",
+//                 resolve(source, args, context) {
+//                     const model = context.nodeModel.getNodeById({id: source.id, type: "Mdx"})
+//                     console.log(source, model);
+//                     return source.id;
+//                 },
+//             },
+//         },
+//     })
+// }

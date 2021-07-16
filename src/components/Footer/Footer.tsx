@@ -5,7 +5,7 @@ import ThemeToggle from '../ThemeToggle';
 
 export default function Footer() {
     return (
-        <footer className="flex flex-col-reverse sm:flex-row justify-between items-center md:mx-5">
+        <footer className="flex flex-col-reverse justify-between items-center sm:flex-row">
             <div className="flex items-center">
                 <ThemeToggle/>
                 <div className="ml-2 md:ml-5">

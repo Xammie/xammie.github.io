@@ -1,11 +1,11 @@
-import React, {PropsWithChildren} from 'react';
-import Link, {GatsbyLinkProps} from 'gatsby-link';
+import React, { PropsWithChildren } from 'react';
+import Link, { GatsbyLinkProps } from 'gatsby-link';
 
-export default function Button({children, ...props}: PropsWithChildren<any | GatsbyLinkProps<any>>) {
+export default function Button({ children, ...props }: PropsWithChildren<any | GatsbyLinkProps<any>>) {
     return (
         <Link
             {...props}
-            className="p-2 text-reading dark:text-black bg-blue-700 hover:bg-blue-500 dark:bg-blue-400 dark:hover:bg-blue-500 font-bold focus:ring ring-blue-400 dark:ring-blue-600 transition duration-100 transition-colors shadow-md inline-block rounded">
+            className="inline-block p-2 font-bold bg-blue-700 rounded ring-blue-400 shadow-md transition transition-colors duration-100 dark:text-black dark:bg-blue-400 dark:ring-blue-600 hover:bg-blue-500 focus:ring text-reading dark:hover:bg-blue-500">
             {children}
         </Link>
     );

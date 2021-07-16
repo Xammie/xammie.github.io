@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Sun from '../../img/sun.svg';
 import Moon from '../../img/moon.svg';
 
@@ -23,7 +23,7 @@ export default function ThemeToggle() {
 
     return (
         <button
-            className="clickable rounded-full p-2 focus:outline-none"
+            className="p-2 rounded-full focus:outline-none clickable"
             onClick={onToggle}
             aria-label="Switch theme"
             aria-checked={isDarkMode ? 'true' : 'false'}

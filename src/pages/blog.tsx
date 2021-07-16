@@ -2,13 +2,13 @@ import React from 'react';
 import Layout from '../components/Layout';
 import Container from '../components/Container';
 import Blog from '../components/Blog';
-import {graphql} from 'gatsby';
+import { graphql } from 'gatsby';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import {GatsbyImage} from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import Seo from '../components/Seo';
 
-export default function PageBlog({data}) {
+export default function PageBlog({ data }) {
     return (
         <Layout>
             <Seo title="Blog"/>
@@ -24,8 +24,7 @@ export default function PageBlog({data}) {
 
 export const pageQuery = graphql`
     {
-        blogs: allMarkdownRemark(
-            filter: {frontmatter: {publish: {eq: true}}},
+        blogs: allMdx(
             sort: {order: DESC, fields: frontmatter___date}
         ) {
             ...BlogList

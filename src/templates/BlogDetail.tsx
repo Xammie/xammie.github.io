@@ -1,16 +1,19 @@
 import React from 'react';
-import {graphql} from 'gatsby';
+import { graphql } from 'gatsby';
 import Container from '../components/Container';
 import Layout from '../components/Layout';
 import Blog from '../components/Blog';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import {StaticImage} from 'gatsby-plugin-image';
+import { StaticImage } from 'gatsby-plugin-image';
 import Seo from '../components/Seo';
 import Article from '../components/Article';
+import { MDXProvider } from '@mdx-js/react';
 
-export default function BlogDetail({data}) {
-    const {frontmatter, html, excerpt} = data.blog;
+const shortcodes = {};
+
+export default function BlogDetail({ data }) {
+    const { frontmatter, body, excerpt } = data.blog;
 
     return (
         <Layout>
@@ -25,9 +28,11 @@ export default function BlogDetail({data}) {
                     <StaticImage src="../img/profile.png" alt="Max Hoogenbosch" width={100}
                         height={100}/>
                 }/>
-                <Article title={frontmatter.title}
-                    date={frontmatter.date}
-                    content={html}/>
+                <MDXProvider components={shortcodes}>
+                    <Article title={frontmatter.title}
+                        date={frontmatter.date}
+                        content={body}/>
+                </MDXProvider>
                 <Blog title="Other blogs" data={data.blogs}/>
                 <Footer/>
             </Container>
@@ -36,14 +41,14 @@ export default function BlogDetail({data}) {
 }
 
 export const pageQuery = graphql`
-    query($slug: String!) {
-        blog: markdownRemark(frontmatter: {slug: {eq: $slug }}) {
-            html
+    query MDXQuery($id: String!) {
+        blog: mdx(id: { eq: $id }) {
+            slug
             excerpt(pruneLength: 200)
+            body
             frontmatter {
                 date(formatString: "MMMM D, YYYY")
                 published: date(formatString: "YYYY-MM-DD[T]HH:mm:ss.SSS[Z]")
-                slug
                 title
                 image {
                     childImageSharp {
@@ -55,11 +60,8 @@ export const pageQuery = graphql`
             }
         }
 
-        blogs: allMarkdownRemark(
-            filter: { frontmatter: {
-                publish: {eq: true}
-                slug: {ne: $slug}
-            }}
+        blogs: allMdx(
+            filter: {id: {ne: $id}}
             sort: {order: DESC, fields: frontmatter___date}
             limit: 3
         ) {

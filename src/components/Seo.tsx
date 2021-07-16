@@ -1,7 +1,7 @@
 import React from 'react';
-import {Helmet} from 'react-helmet';
-import {useLocation} from '@reach/router';
-import {graphql, useStaticQuery} from 'gatsby';
+import { Helmet } from 'react-helmet';
+import { useLocation } from '@reach/router';
+import { graphql, useStaticQuery } from 'gatsby';
 
 interface Props {
     title?: string
@@ -12,9 +12,9 @@ interface Props {
     tags?: string[]
 }
 
-export default function Seo({title, description, image, article, published, tags}: Props) {
-    const {pathname} = useLocation();
-    const {site} = useStaticQuery(query);
+export default function Seo({ title, description, image, article, published, tags }: Props) {
+    const { pathname } = useLocation();
+    const { site } = useStaticQuery(query);
 
     const {
         defaultTitle,

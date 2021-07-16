@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .clickable {
-    @apply hover:bg-gray-200 dark:hover:bg-gray-800;
+    @apply hover:bg-white dark:hover:bg-gray-800;
     @apply focus:bg-blue-300 dark:focus:bg-blue-900;
     @apply focus:ring ring-blue-200 dark:ring-blue-600;
     @apply transition duration-100 transition-colors;
