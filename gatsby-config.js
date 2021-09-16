@@ -92,8 +92,8 @@ module.exports = {
                             title: node.frontmatter.title,
                             description: node.excerpt,
                             date: node.frontmatter.date,
-                            url: `${site.siteMetadata.siteUrl}/blog/${node.slug}/`,
-                            guid: `${site.siteMetadata.siteUrl}/blog/${node.slug}/`,
+                            url: `${site.siteMetadata.siteUrl}${node.uri}`,
+                            guid: `${site.siteMetadata.siteUrl}${node.uri}`,
                         })),
                         query: `
                             {
@@ -102,7 +102,7 @@ module.exports = {
                                 ) {
                                     nodes {
                                         excerpt
-                                        slug
+                                        uri
                                         frontmatter {
                                             title
                                             date

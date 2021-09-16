@@ -1,3 +1,5 @@
+const path = require('path');
+
 exports.createPages = async ({actions: {createPage}, graphql, reporter}) => {
     const {data, errors} = await graphql(`
         {
@@ -6,7 +8,7 @@ exports.createPages = async ({actions: {createPage}, graphql, reporter}) => {
             ) {
                 nodes {
                     id
-                    slug
+                    uri
                 }
             }
         }
@@ -20,10 +22,10 @@ exports.createPages = async ({actions: {createPage}, graphql, reporter}) => {
 
     const template = require.resolve(`./src/templates/BlogDetail.tsx`);
 
-    data.blogs.nodes.forEach(({id, slug}) => {
+    data.blogs.nodes.forEach(({id, uri}) => {
         createPage({
             component: template,
-            path: `/blog/${slug}/`,
+            path: uri,
             context: {
                 id: id,
             },
@@ -31,17 +33,17 @@ exports.createPages = async ({actions: {createPage}, graphql, reporter}) => {
     })
 }
 
-// exports.createResolvers = ({createResolvers}) => {
-//     createResolvers({
-//         Mdx: {
-//             path: {
-//                 type: "String",
-//                 resolve(source, args, context) {
-//                     const model = context.nodeModel.getNodeById({id: source.id, type: "Mdx"})
-//                     console.log(source, model);
-//                     return source.id;
-//                 },
-//             },
-//         },
-//     })
-// }
+exports.createResolvers = ({createResolvers}) => {
+    createResolvers({
+        Mdx: {
+            uri: {
+                type: "String",
+                resolve(source) {
+                    const slug = path.basename(source.fileAbsolutePath, path.extname(source.fileAbsolutePath));
+
+                    return `/blog/${slug}/`;
+                },
+            },
+        },
+    })
+}

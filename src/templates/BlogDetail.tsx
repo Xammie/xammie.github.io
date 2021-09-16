@@ -43,7 +43,6 @@ export default function BlogDetail({ data }) {
 export const pageQuery = graphql`
     query MDXQuery($id: String!) {
         blog: mdx(id: { eq: $id }) {
-            slug
             excerpt(pruneLength: 200)
             body
             frontmatter {

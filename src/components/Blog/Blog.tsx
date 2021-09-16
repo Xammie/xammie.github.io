@@ -24,7 +24,7 @@ export const query = graphql`
     fragment BlogList on MdxConnection {
         nodes {
             excerpt(pruneLength: 150)
-            slug
+            uri
             frontmatter {
                 title
                 date(formatString: "MMMM D, YYYY")
