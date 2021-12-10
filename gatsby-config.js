@@ -88,6 +88,7 @@ module.exports = {
                 `,
                 feeds: [
                     {
+                        title: 'Feed',
                         serialize: ({query: {site, blogs}}) => blogs.nodes.map(node => ({
                             title: node.frontmatter.title,
                             description: node.excerpt,
