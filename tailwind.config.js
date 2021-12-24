@@ -6,7 +6,10 @@ module.exports = {
     ],
     darkMode: 'class',
     plugins: [
-        require('@tailwindcss/typography')({modifiers: []}),
+        require('@tailwindcss/typography')({
+            modifiers: [],
+            className: 'markdown',
+        }),
     ],
     theme: {
         container: {

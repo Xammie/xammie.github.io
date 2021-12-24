@@ -11,7 +11,7 @@ export default function Intro({ image }) {
             <div>
                 <Profile
                     image={image}
-                    className="w-32 h-32 duration-100 transform sm:w-48 sm:h-48 hover:scale-105 hover:rotate-6"/>
+                    className="w-32 h-32 duration-100 sm:w-48 sm:h-48 hover:scale-105 hover:rotate-6"/>
             </div>
             <div className="flex flex-col items-center text-center md:items-start md:text-left">
                 <h1 className="text-4xl font-extrabold sm:text-5xl md:text-5xl">
