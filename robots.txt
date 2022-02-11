@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /storybook/
 
-Sitemap: https://hoogenbos.ch/sitemap.xml
+Sitemap: https://hoogenbos.ch/sitemap/sitemap-index.xml
