@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    @apply bg-gray-100 text-background dark:text-reading dark:bg-background;
+}
+
 .clickable {
     @apply hover:bg-white dark:hover:bg-gray-800;
     @apply focus:bg-blue-300 dark:focus:bg-blue-900;
@@ -12,4 +16,8 @@
 
 .flex-center {
     @apply flex justify-center items-center;
+}
+
+.remark-highlight > pre {
+    @apply -mx-4 rounded-none sm:rounded-lg sm:-mx-6 sm:px-6 py-3;
 }

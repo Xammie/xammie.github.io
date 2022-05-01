@@ -18,7 +18,8 @@ module.exports = {
     },
     plugins: [
         'react',
-        '@typescript-eslint'
+        '@typescript-eslint',
+        'prettier',
     ],
     rules: {
         'indent': ['error', 4],
@@ -33,6 +34,7 @@ module.exports = {
         'react/no-unescaped-entities': 'off',
         'object-curly-spacing': ['warn', 'always'],
         'array-bracket-spacing': ['warn', 'never'],
+        'prettier/prettier': 'error',
     },
     settings: {
         react: {

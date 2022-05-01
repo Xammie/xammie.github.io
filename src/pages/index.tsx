@@ -11,13 +11,21 @@ import Seo from '../components/Seo';
 export default function PageHome({ data }: any) {
     return (
         <Layout>
-            <Seo/>
+            <Seo />
             <Container>
-                <Intro image={<GatsbyImage alt="Max Hoogenbosch"
-                    title="This is me :)"
-                    image={data.profile.childImageSharp.gatsbyImageData}/>}/>
-                <Blog data={data.blogs}/>
-                <Footer/>
+                <Intro
+                    image={
+                        <GatsbyImage
+                            alt="Max Hoogenbosch"
+                            title="This is me :)"
+                            image={data.profile.childImageSharp.gatsbyImageData}
+                        />
+                    }
+                />
+                <main>
+                    <Blog data={data.blogs} />
+                </main>
+                <Footer />
             </Container>
         </Layout>
     );
@@ -25,10 +33,7 @@ export default function PageHome({ data }: any) {
 
 export const pageQuery = graphql`
     {
-        blogs: allMdx(
-            sort: {order: DESC, fields: frontmatter___date}
-            limit: 3
-        ) {
+        blogs: allMdx(sort: { order: DESC, fields: frontmatter___date }) {
             ...BlogList
         }
 

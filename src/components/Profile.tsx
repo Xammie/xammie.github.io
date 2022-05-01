@@ -4,7 +4,12 @@ import { graphql } from 'gatsby';
 
 export default function Profile({ image, className }) {
     return (
-        <div className={classNames(className, 'rounded-full shadow-md overflow-hidden')}>
+        <div
+            className={classNames(
+                className,
+                'overflow-hidden rounded-full shadow-md',
+            )}
+        >
             {image}
         </div>
     );

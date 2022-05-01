@@ -6,21 +6,31 @@ import React from 'react';
 
 export default function Socials() {
     return (
-        <div className="flex -mx-2 space-x-0.5" role="navigation" aria-label="Links">
-            <Icon title="GitHub"
+        <div
+            className="-mx-2 flex space-x-0.5"
+            role="navigation"
+            aria-label="Links"
+        >
+            <Icon
+                title="GitHub"
                 rel="noopener"
-                href="https://github.com/Xammie">
-                <Github className="h-8"/>
+                href="https://github.com/Xammie"
+            >
+                <Github className="h-8" />
             </Icon>
-            <Icon title="LinkedIn"
+            <Icon
+                title="LinkedIn"
                 rel="noopener"
-                href="https://www.linkedin.com/in/maxhoogenbosch/">
-                <Linkedin className="h-8"/>
+                href="https://www.linkedin.com/in/maxhoogenbosch/"
+            >
+                <Linkedin className="h-8" />
             </Icon>
-            <Icon title="Twitter"
+            <Icon
+                title="Twitter"
                 rel="noopener"
-                href="https://twitter.com/maxhoogenbosch">
-                <Twitter className="h-8"/>
+                href="https://twitter.com/maxhoogenbosch"
+            >
+                <Twitter className="h-8" />
             </Icon>
         </div>
     );

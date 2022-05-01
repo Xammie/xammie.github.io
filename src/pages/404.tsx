@@ -8,11 +8,11 @@ export default function Page404() {
         <Layout>
             <Helmet>
                 <title>Page not found</title>
-                <meta name="robots" content="noindex"/>
+                <meta name="robots" content="noindex" />
             </Helmet>
             <Container>
-                <div className="flex-col flex-grow flex-center">
-                    <h1 className="overflow-visible z-10 py-3 text-4xl font-bold sm:text-5xl md:text-6xl">
+                <div className="flex-center flex-grow flex-col">
+                    <h1 className="z-10 overflow-visible py-3 text-4xl font-bold sm:text-5xl md:text-6xl">
                         Page not found
                     </h1>
                 </div>

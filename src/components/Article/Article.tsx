@@ -1,26 +1,28 @@
 import React from 'react';
-import Surface from '../Surface';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 interface Props {
-    title: string
-    date: string
-    content: string
+    title: string;
+    date: string;
+    content: string;
 }
 
 export default function Article({ title, date, content }: Props) {
     return (
-        <Surface>
-            <p className="mb-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-300">
-                {date}
-            </p>
-            <h1 className="mx-auto mb-8 text-3xl font-extrabold tracking-tight leading-8 text-black sm:text-4xl prose dark:text-reading">
-                {title}
-            </h1>
-            <article
-                className="mx-auto text-base leading-relaxed markdown dark:markdown-dark">
-                <MDXRenderer>{content}</MDXRenderer>
-            </article>
-        </Surface>
+        <div className="bg-white px-4 py-5 text-surface dark:bg-surface dark:text-reading md:p-6">
+            <div className="mx-auto flex max-w-[65ch] flex-col gap-6">
+                <div className="flex flex-col gap-1">
+                    <p className="whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                        {date}
+                    </p>
+                    <h1 className="text-3xl font-extrabold leading-8 tracking-tight text-black dark:text-reading sm:text-4xl">
+                        {title}
+                    </h1>
+                </div>
+                <article className="markdown mx-auto text-base leading-relaxed dark:markdown-dark">
+                    <MDXRenderer>{content}</MDXRenderer>
+                </article>
+            </div>
+        </div>
     );
 }

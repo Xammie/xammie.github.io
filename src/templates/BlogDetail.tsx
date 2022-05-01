@@ -2,45 +2,50 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Container from '../components/Container';
 import Layout from '../components/Layout';
-import Blog from '../components/Blog';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { StaticImage } from 'gatsby-plugin-image';
 import Seo from '../components/Seo';
 import Article from '../components/Article';
-import { MDXProvider } from '@mdx-js/react';
-
-const shortcodes = {};
 
 export default function BlogDetail({ data }) {
     const { frontmatter, body, excerpt } = data.blog;
 
     return (
         <Layout>
-            <Seo title={frontmatter.title}
+            <Seo
+                title={frontmatter.title}
                 description={excerpt}
                 image={frontmatter.image?.childImageSharp?.original?.src}
                 tags={frontmatter.tags}
                 published={frontmatter.published}
-                article/>
+                article
+            />
+            <Header
+                image={
+                    <StaticImage
+                        src="../img/profile.png"
+                        alt="Max Hoogenbosch"
+                        width={100}
+                        height={100}
+                    />
+                }
+            />
+            <main>
+                <Article
+                    title={frontmatter.title}
+                    date={frontmatter.date}
+                    content={body}
+                />
+            </main>
             <Container>
-                <Header image={
-                    <StaticImage src="../img/profile.png" alt="Max Hoogenbosch" width={100}
-                        height={100}/>
-                }/>
-                <MDXProvider components={shortcodes}>
-                    <Article title={frontmatter.title}
-                        date={frontmatter.date}
-                        content={body}/>
-                </MDXProvider>
-                <Blog title="Other blogs" data={data.blogs}/>
-                <Footer/>
+                <Footer />
             </Container>
         </Layout>
     );
 }
 
-export const pageQuery = graphql`
+export const query = graphql`
     query MDXQuery($id: String!) {
         blog: mdx(id: { eq: $id }) {
             excerpt(pruneLength: 200)
@@ -57,14 +62,6 @@ export const pageQuery = graphql`
                     }
                 }
             }
-        }
-
-        blogs: allMdx(
-            filter: {id: {ne: $id}}
-            sort: {order: DESC, fields: frontmatter___date}
-            limit: 3
-        ) {
-            ...BlogList
         }
     }
 `;

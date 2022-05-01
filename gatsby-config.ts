@@ -1,78 +1,83 @@
-module.exports = {
+import type { GatsbyConfig } from 'gatsby';
+import { resolve } from 'path';
+
+const config: GatsbyConfig = {
     siteMetadata: {
-        title: `Max Hoogenbosch`,
-        titleTemplate: `%s - Max Hoogenbosch`,
-        description: `Technical blog about laravel and React`,
-        siteUrl: `https://hoogenbos.ch`,
-        twitterUsername: `@maxhoogenbosch`,
-        lang: `en`,
-        locale: `en_US`,
+        title: 'Max Hoogenbosch',
+        titleTemplate: '%s - Max Hoogenbosch',
+        description: 'Technical blog about laravel and React',
+        siteUrl: 'https://hoogenbos.ch',
+        twitterUsername: '@maxhoogenbosch',
+        lang: 'en',
+        locale: 'en_US',
     },
     plugins: [
         {
-            resolve: `gatsby-plugin-typescript`,
+            resolve: 'gatsby-plugin-typescript',
             options: {
                 isTSX: true,
                 allExtensions: true,
             },
         },
-        `gatsby-plugin-postcss`,
+        'gatsby-plugin-postcss',
         {
             resolve: 'gatsby-plugin-react-svg',
             options: {
                 rule: {
-                    include: /img/
-                }
-            }
-        },
-        {
-            resolve: `gatsby-plugin-manifest`,
-            options: {
-                name: `Max Hoogenbosch`,
-                short_name: `Max`,
-                start_url: `/`,
-                lang: `en`,
-                background_color: `#fff`,
-                theme_color: `rgb(17, 24, 39)`,
-                display: `standalone`,
-                icon: `src/img/icon.png`,
+                    include: /img/,
+                },
             },
         },
-        `gatsby-plugin-offline`,
         {
-            resolve: `gatsby-source-filesystem`,
+            resolve: 'gatsby-plugin-manifest',
             options: {
-                name: `img`,
-                path: `${__dirname}/src/img/`
-            }
+                name: 'Max Hoogenbosch',
+                short_name: 'Max',
+                start_url: '/',
+                lang: 'en',
+                background_color: '#fff',
+                theme_color: 'rgb(17, 24, 39)',
+                display: 'standalone',
+                icon: 'src/img/icon.png',
+            },
+        },
+        'gatsby-plugin-offline',
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                name: 'img',
+                path: resolve('./src/img/'),
+            },
         },
         {
-            resolve: `gatsby-plugin-sharp`,
+            resolve: 'gatsby-plugin-sharp',
             options: {
                 defaults: {
-                    formats: [`auto`, `webp`, `avif`],
-                    placeholder: `blurred`,
+                    formats: ['auto', 'webp', 'avif'],
+                    placeholder: 'blurred',
                     breakpoints: [750, 1080, 1366, 1920],
-                }
-            }
+                },
+            },
         },
-        `gatsby-transformer-sharp`,
-        `gatsby-plugin-image`,
+        'gatsby-transformer-sharp',
+        'gatsby-plugin-image',
         {
-            resolve: `gatsby-plugin-gtag`,
+            resolve: 'gatsby-plugin-gtag',
             options: {
-                // your google analytics tracking id
-                trackingId: `UA-181396331-1`,
-                // Puts tracking script in the head instead of the body
+                trackingId: 'UA-181396331-1',
                 head: false,
-                // enable ip anonymization
                 anonymize: true,
             },
         },
-        `gatsby-plugin-react-helmet`,
-        `gatsby-plugin-sitemap`,
+        'gatsby-plugin-react-helmet',
         {
-            resolve: `gatsby-plugin-feed`,
+            resolve: 'gatsby-plugin-sitemap',
+            options: {
+                output: '/',
+            },
+        },
+        {
+            resolve: 'gatsby-plugin-feed',
             options: {
                 query: `
                     {
@@ -89,12 +94,12 @@ module.exports = {
                 feeds: [
                     {
                         title: 'Feed',
-                        serialize: ({query: {site, blogs}}) => blogs.nodes.map(node => ({
+                        serialize: ({ query: { site, blogs } }) => blogs.nodes.map(node => ({
                             title: node.frontmatter.title,
                             description: node.excerpt,
                             date: node.frontmatter.date,
-                            url: `${site.siteMetadata.siteUrl}${node.uri}`,
-                            guid: `${site.siteMetadata.siteUrl}${node.uri}`,
+                            url: `${site.siteMetadata.siteUrl}/blog/${node.slug}`,
+                            guid: `${site.siteMetadata.siteUrl}/blog/${node.slug}`,
                         })),
                         query: `
                             {
@@ -103,7 +108,7 @@ module.exports = {
                                 ) {
                                     nodes {
                                         excerpt
-                                        uri
+                                        slug
                                         frontmatter {
                                             title
                                             date
@@ -112,22 +117,22 @@ module.exports = {
                                 }
                             }
                         `,
-                        output: `/rss.xml`,
-                        match: `^/blog/`,
+                        output: '/rss.xml',
+                        match: '^/blog/',
                     },
                 ],
-            }
+            },
         },
-        `gatsby-remark-images`,
+        'gatsby-remark-images',
         {
-            resolve: `gatsby-plugin-mdx`,
+            resolve: 'gatsby-plugin-mdx',
             options: {
                 remarkPlugins: [
-                    require('remark-prism')
+                    require('remark-prism'),
                 ],
                 gatsbyRemarkPlugins: [
                     {
-                        resolve: `gatsby-remark-images`,
+                        resolve: 'gatsby-remark-images',
                         options: {
                             // It's important to specify the maxWidth (in pixels) of
                             // the content container as this plugin uses this as the
@@ -141,11 +146,13 @@ module.exports = {
             },
         },
         {
-            resolve: `gatsby-source-filesystem`,
+            resolve: 'gatsby-source-filesystem',
             options: {
-                name: `blogs`,
-                path: `${__dirname}/content/`
-            }
+                name: 'blogs',
+                path: resolve('./content'),
+            },
         },
     ],
-}
+};
+
+export default config;
