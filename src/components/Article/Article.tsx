@@ -19,7 +19,7 @@ export default function Article({ title, date, content }: Props) {
                         {title}
                     </h1>
                 </div>
-                <article className="markdown mx-auto text-base leading-relaxed dark:markdown-dark w-full">
+                <article className="markdown mx-auto w-full text-base leading-relaxed dark:markdown-dark">
                     <MDXRenderer>{content}</MDXRenderer>
                 </article>
             </div>

@@ -31,11 +31,11 @@ export default function BlogDetail({ data }) {
                     />
                 }
             />
-                <Article
-                    title={frontmatter.title}
-                    date={frontmatter.date}
-                    content={body}
-                />
+            <Article
+                title={frontmatter.title}
+                date={frontmatter.date}
+                content={body}
+            />
             <Container>
                 <Footer />
             </Container>
