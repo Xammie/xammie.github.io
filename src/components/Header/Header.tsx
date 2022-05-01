@@ -7,7 +7,7 @@ import Container from '../Container';
 export default function Header({ image }) {
     return (
         <Container>
-            <header className="flex flex-col sm:flex-row items-center justify-between">
+            <header className="flex flex-col items-center justify-between sm:flex-row">
                 <Link
                     to="/"
                     className="flex-center clickable overflow-hidden rounded-full"
