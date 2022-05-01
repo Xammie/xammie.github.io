@@ -5,7 +5,6 @@
   "description": "Personal website",
   "scripts": {
     "build": "gatsby build",
-    "deploy": "yarn install && gatsby clean && gatsby build && gh-pages -d public",
     "develop": "gatsby develop",
     "prod": "gatsby build && gatsby serve",
     "production": "gatsby build && gatsby serve",
