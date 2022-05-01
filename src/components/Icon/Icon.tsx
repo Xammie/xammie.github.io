@@ -9,7 +9,7 @@ export default function Icon({
     return (
         <Component
             {...props}
-            className="flex-center clickable h-12 w-12 rounded-lg"
+            className="flex-center clickable h-10 w-10 rounded-lg"
         >
             {children}
         </Component>

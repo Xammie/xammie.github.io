@@ -16,21 +16,21 @@ export default function Socials() {
                 rel="noopener"
                 href="https://github.com/Xammie"
             >
-                <Github className="h-8" />
+                <Github className="h-6" />
             </Icon>
             <Icon
                 title="LinkedIn"
                 rel="noopener"
                 href="https://www.linkedin.com/in/maxhoogenbosch/"
             >
-                <Linkedin className="h-8" />
+                <Linkedin className="h-6" />
             </Icon>
             <Icon
                 title="Twitter"
                 rel="noopener"
                 href="https://twitter.com/maxhoogenbosch"
             >
-                <Twitter className="h-8" />
+                <Twitter className="h-6" />
             </Icon>
         </div>
     );
