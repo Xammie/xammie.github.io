@@ -1,7 +1,7 @@
 ---
 title:   "Webpack vs Laravel Mix"
 date:    "2022-05-01"
-image:   "assets/storybook-darkmode.png"
+image:   "assets/webpack-vs-laravel-mix.png"
 ---
 
 It is very common to compile JavaScript using a bundler like [Webpack](https://webpack.js.org/). Every time I have used
@@ -16,7 +16,7 @@ very simple API for compiling your JavaScript or CSS assets. What used to requir
 config is now a simple script with a few lines of code.
 
 ```js
-const mix = require('laravel-mix');
+const mix = require('laravel-mix')
 
 mix.js('src/app.js', 'dist')
 mix.css('src/style.css', 'dist')
