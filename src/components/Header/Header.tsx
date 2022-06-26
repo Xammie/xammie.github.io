@@ -15,7 +15,7 @@ export default function Header() {
                 >
                     <Profile
                         image={<StaticImage
-                            src="../img/profile.png"
+                            src="../../img/profile.png"
                             alt="Max Hoogenbosch"
                             width={100}
                             height={100}
