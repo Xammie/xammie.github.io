@@ -3,8 +3,9 @@ import Profile from '../Profile';
 import Link from 'gatsby-link';
 import Socials from '../Socials';
 import Container from '../Container';
+import {StaticImage} from "gatsby-plugin-image";
 
-export default function Header({ image }) {
+export default function Header() {
     return (
         <Container>
             <header className="flex flex-col items-center justify-between sm:flex-row">
@@ -13,7 +14,12 @@ export default function Header({ image }) {
                     className="flex-center clickable overflow-hidden rounded-full"
                 >
                     <Profile
-                        image={image}
+                        image={<StaticImage
+                            src="../img/profile.png"
+                            alt="Max Hoogenbosch"
+                            width={100}
+                            height={100}
+                        />}
                         className="h-10 w-10 md:h-12 md:w-12"
                     />
                     <div className="mx-3 truncate text-lg font-bold md:text-xl">
@@ -21,7 +27,7 @@ export default function Header({ image }) {
                     </div>
                 </Link>
                 <div className="hidden items-center justify-center sm:flex">
-                    <Socials />
+                    <Socials/>
                 </div>
             </header>
         </Container>

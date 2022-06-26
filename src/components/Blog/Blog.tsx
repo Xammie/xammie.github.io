@@ -4,13 +4,11 @@ import { graphql } from 'gatsby';
 
 export default function Blog({ title = 'Blog posts', data }) {
     return (
-        <div>
+        <div className="mx-auto flex max-w-xl flex-col gap-3">
             <h2 className="text-xl font-bold md:text-2xl">{title}</h2>
-            <div className="mt-2 space-y-3">
-                {data.nodes.map((data, index) => (
-                    <Item data={data} key={index} />
-                ))}
-            </div>
+            {data.nodes.map((data, index) => (
+                <Item data={data} key={index} />
+            ))}
         </div>
     );
 }

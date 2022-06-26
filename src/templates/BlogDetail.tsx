@@ -4,7 +4,6 @@ import Container from '../components/Container';
 import Layout from '../components/Layout';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { StaticImage } from 'gatsby-plugin-image';
 import Seo from '../components/Seo';
 import Article from '../components/Article';
 
@@ -21,16 +20,7 @@ export default function BlogDetail({ data }) {
                 published={frontmatter.published}
                 article
             />
-            <Header
-                image={
-                    <StaticImage
-                        src="../img/profile.png"
-                        alt="Max Hoogenbosch"
-                        width={100}
-                        height={100}
-                    />
-                }
-            />
+            <Header/>
             <Article
                 title={frontmatter.title}
                 date={frontmatter.date}

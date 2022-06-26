@@ -13,7 +13,7 @@ export default function Intro({ image }) {
                     className="h-32 w-32 duration-100 hover:rotate-6 hover:scale-105 sm:h-48 sm:w-48"
                 />
             </div>
-            <div className="flex flex-col items-center text-center md:items-start md:text-left">
+            <div className="flex flex-col items-center text-center md:items-stretch md:text-left">
                 <h1 className="text-4xl font-extrabold sm:text-5xl md:text-5xl">
                     Max Hoogenbosch
                 </h1>
