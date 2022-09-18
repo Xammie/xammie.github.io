@@ -1,10 +1,11 @@
 ---
 title:   "Eager loading hasMany relationship in Laravel"
+slug:    "/blog/eager-loading-hasmany-relationship-laravel/"
 date:    "2021-02-01"
 image:   "assets/eager-loading.png"
 ---
 
-[Eager loading](https://laravel.com/docs/8.x/eloquent-relationships#eager-loading) relationships in Laravel makes it
+[Eager loading](https://laravel.com/docs/9.x/eloquent-relationships#eager-loading) relationships in Laravel makes it
 really easy to avoid N+1 query problems. This occurs when you run an additional query for each result in a previous
 query. Take for example a model `Post` that has a `hasOne` relationship with `User`.
 
@@ -35,7 +36,7 @@ In this case eager loading causes to load all posts for every user. This is bad 
 
 Because the user model has a `hasMany` relationship with posts, all posts are eager loaded for every user. To solve this
 you might think a simple `->limit(1)` would do the
-trick. [But that does not work](https://laravel.com/docs/8.x/eloquent-relationships#constraining-eager-loads).
+trick. [But that does not work](https://laravel.com/docs/9.x/eloquent-relationships#constraining-eager-loads).
 
 The solution is actually pretty simple. In order to load the latest post you can simply create a new `hasOne`
 relationship on the `User` model.

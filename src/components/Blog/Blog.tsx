@@ -17,9 +17,9 @@ export const query = graphql`
     fragment BlogList on MdxConnection {
         nodes {
             excerpt(pruneLength: 150)
-            slug
             frontmatter {
                 title
+                slug
                 date(formatString: "MMMM D, YYYY")
                 image {
                     childImageSharp {

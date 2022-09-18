@@ -1,13 +1,11 @@
 import React from 'react';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 interface Props {
     title: string;
     date: string;
-    content: string;
 }
 
-export default function Article({ title, date, content }: Props) {
+export default function Article({ title, date, children }: React.PropsWithChildren<Props>) {
     return (
         <main className="bg-white px-4 py-5 text-surface dark:bg-surface dark:text-reading md:p-6">
             <div className="mx-auto flex w-full max-w-[65ch] flex-col gap-6">
@@ -20,7 +18,7 @@ export default function Article({ title, date, content }: Props) {
                     </h1>
                 </div>
                 <article className="markdown mx-auto w-full text-base leading-relaxed dark:markdown-dark">
-                    <MDXRenderer>{content}</MDXRenderer>
+                    {children}
                 </article>
             </div>
         </main>

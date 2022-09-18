@@ -8,7 +8,12 @@ exports.createPages = async ({actions: {createPage, createRedirect}, graphql, re
             ) {
                 nodes {
                     id
-                    slug
+                    frontmatter {
+                        slug
+                    }
+                    internal {
+                        contentFilePath
+                    }
                 }
             }
         }
@@ -21,12 +26,12 @@ exports.createPages = async ({actions: {createPage, createRedirect}, graphql, re
 
     const template = resolve('./src/templates/BlogDetail.tsx');
 
-    data.blogs.nodes.forEach(({id, slug}) => {
+    data.blogs.nodes.forEach(node => {
         createPage({
-            component: template,
-            path: `/blog/${slug}/`,
+            path: node.frontmatter.slug,
+            component: `${template}?__contentFilePath=${node.internal.contentFilePath}`,
             context: {
-                id: id,
+                id: node.id,
             },
         });
     });
