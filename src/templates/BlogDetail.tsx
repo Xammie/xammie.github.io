@@ -20,7 +20,7 @@ export default function BlogDetail({ data }) {
                 published={frontmatter.published}
                 article
             />
-            <Header/>
+            <Header />
             <Article
                 title={frontmatter.title}
                 date={frontmatter.date}
