@@ -20,7 +20,7 @@ export default function Packages() {
 
         try {
             const response = await fetch(
-                'http://api.hoogenbos.ch/v1/packagist/xammie',
+                'https://api.hoogenbos.ch/v1/packagist/xammie',
             );
             const data = await response.json();
 
