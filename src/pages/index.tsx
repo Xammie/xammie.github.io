@@ -18,6 +18,8 @@ export default function PageHome({ data }: any) {
                         <GatsbyImage
                             alt="Max Hoogenbosch"
                             title="This is me :)"
+                            className="rounded-full"
+                            imgClassName="rounded-full"
                             image={data.profile.childImageSharp.gatsbyImageData}
                         />
                     }

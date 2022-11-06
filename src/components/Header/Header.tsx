@@ -18,6 +18,8 @@ export default function Header() {
                             <StaticImage
                                 src="../../img/profile.png"
                                 alt="Max Hoogenbosch"
+                                className="rounded-full"
+                                imgClassName="rounded-full"
                                 width={100}
                                 height={100}
                             />
