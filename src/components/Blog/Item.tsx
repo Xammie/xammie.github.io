@@ -11,6 +11,7 @@ export default function Item({ data }) {
             {data.frontmatter.image?.childImageSharp && (
                 <GatsbyImage
                     className="rounded-t-xl shadow-md"
+                    imgClassName="rounded-t-xl shadow-md"
                     alt={data.frontmatter.title}
                     image={
                         data.frontmatter.image.childImageSharp.gatsbyImageData
