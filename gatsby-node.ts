@@ -1,14 +1,21 @@
-import {resolve} from 'path';
+import { resolve } from 'path';
 
-exports.createPages = async ({actions: {createPage, createRedirect}, graphql, reporter}) => {
-    const {data, errors} = await graphql(`
+exports.createPages = async ({
+    actions: { createPage, createRedirect },
+    graphql,
+    reporter,
+}) => {
+    const { data, errors } = await graphql(`
         {
-            blogs: allMdx(
-                sort: {order: ASC, fields: frontmatter___date}
-            ) {
+            blogs: allMdx(sort: { order: ASC, fields: frontmatter___date }) {
                 nodes {
                     id
-                    slug
+                    frontmatter {
+                        slug
+                    }
+                    internal {
+                        contentFilePath
+                    }
                 }
             }
         }
@@ -21,13 +28,12 @@ exports.createPages = async ({actions: {createPage, createRedirect}, graphql, re
 
     const template = resolve('./src/templates/BlogDetail.tsx');
 
-    data.blogs.nodes.forEach(({id, slug}) => {
+    data.blogs.nodes.forEach(({ id, internal, frontmatter: { slug } }) => {
         createPage({
-            component: template,
+            component:
+                template + '?__contentFilePath=' + internal.contentFilePath,
             path: `/blog/${slug}/`,
-            context: {
-                id: id,
-            },
+            context: { id },
         });
     });
 
@@ -38,7 +44,7 @@ exports.createPages = async ({actions: {createPage, createRedirect}, graphql, re
         toPath: '/',
         isPermanent: true,
         redirectInBrowser: true,
-    })
+    });
 };
 
 function redirectFactory(createRedirect) {
@@ -48,5 +54,5 @@ function redirectFactory(createRedirect) {
             fromPath: `${options.fromPath}/`,
         });
         createRedirect(options);
-    }
+    };
 }

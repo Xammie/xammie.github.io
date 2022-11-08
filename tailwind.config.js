@@ -1,9 +1,5 @@
 module.exports = {
-    content: [
-        './content/*.mdx',
-        './src/**/*.tsx',
-        './*.js',
-    ],
+    content: ['./content/*.mdx', './src/**/*.tsx', './*.js'],
     plugins: [
         require('@tailwindcss/typography')({
             modifiers: [],
@@ -13,11 +9,11 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                'background': '#121212',
-                'surface': '#303030',
-                'reading': '#ffffffDE',
+                background: '#121212',
+                surface: '#303030',
+                reading: '#ffffffDE',
             },
-            typography: theme => ({
+            typography: (theme) => ({
                 DEFAULT: {
                     css: {
                         img: {
@@ -44,10 +40,10 @@ module.exports = {
                             padding: '4px',
                         },
                         'code::before': {
-                            'content': null,
+                            content: null,
                         },
                         'code::after': {
-                            'content': null,
+                            content: null,
                         },
                     },
                 },
@@ -76,9 +72,9 @@ module.exports = {
                             color: theme('colors.gray.200'),
                             borderLeftColor: theme('colors.gray.200'),
                         },
-                    }
-                }
+                    },
+                },
             }),
         },
     },
-}
+};

@@ -1,5 +1,4 @@
 import React from 'react';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 interface Props {
     title: string;
@@ -20,7 +19,7 @@ export default function Article({ title, date, content }: Props) {
                     </h1>
                 </div>
                 <article className="markdown mx-auto w-full text-base leading-relaxed dark:markdown-dark">
-                    <MDXRenderer>{content}</MDXRenderer>
+                    {content}
                 </article>
             </div>
         </main>

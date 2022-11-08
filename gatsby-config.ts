@@ -94,13 +94,14 @@ const config: GatsbyConfig = {
                 feeds: [
                     {
                         title: 'Feed',
-                        serialize: ({ query: { site, blogs } }) => blogs.nodes.map(node => ({
-                            title: node.frontmatter.title,
-                            description: node.excerpt,
-                            date: node.frontmatter.date,
-                            url: `${site.siteMetadata.siteUrl}/blog/${node.slug}`,
-                            guid: `${site.siteMetadata.siteUrl}/blog/${node.slug}`,
-                        })),
+                        serialize: ({ query: { site, blogs } }) =>
+                            blogs.nodes.map((node) => ({
+                                title: node.frontmatter.title,
+                                description: node.excerpt,
+                                date: node.frontmatter.date,
+                                url: `${site.siteMetadata.siteUrl}/blog/${node.slug}`,
+                                guid: `${site.siteMetadata.siteUrl}/blog/${node.slug}`,
+                            })),
                         query: `
                             {
                                 blogs: allMdx(
@@ -127,9 +128,10 @@ const config: GatsbyConfig = {
         {
             resolve: 'gatsby-plugin-mdx',
             options: {
-                remarkPlugins: [
-                    require('remark-prism'),
-                ],
+                mdxOptions: {
+                    remarkPlugins: [require('remark-prism')],
+                    rehypePlugins: [],
+                },
                 gatsbyRemarkPlugins: [
                     {
                         resolve: 'gatsby-remark-images',

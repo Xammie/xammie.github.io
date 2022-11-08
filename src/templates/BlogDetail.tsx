@@ -7,8 +7,8 @@ import Footer from '../components/Footer';
 import Seo from '../components/Seo';
 import Article from '../components/Article';
 
-export default function BlogDetail({ data }) {
-    const { frontmatter, body, excerpt } = data.blog;
+export default function BlogDetail({ data, children }) {
+    const { frontmatter, excerpt } = data.blog;
 
     return (
         <Layout>
@@ -24,7 +24,7 @@ export default function BlogDetail({ data }) {
             <Article
                 title={frontmatter.title}
                 date={frontmatter.date}
-                content={body}
+                content={children}
             />
             <Container>
                 <Footer />
@@ -37,7 +37,6 @@ export const query = graphql`
     query MDXQuery($id: String!) {
         blog: mdx(id: { eq: $id }) {
             excerpt(pruneLength: 200)
-            body
             frontmatter {
                 date(formatString: "MMMM D, YYYY")
                 published: date(formatString: "YYYY-MM-DD[T]HH:mm:ss.SSS[Z]")

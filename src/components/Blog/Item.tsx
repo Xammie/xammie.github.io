@@ -5,7 +5,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 export default function Item({ data }) {
     return (
         <Link
-            to={`/blog/${data.slug}`}
+            to={`/blog/${data.frontmatter.slug}`}
             className="flex flex-col rounded-xl bg-white shadow-md ring-blue-200 transition transition-colors duration-100 hover:bg-blue-100 focus:bg-blue-300 focus:ring dark:bg-surface dark:ring-blue-600 dark:hover:bg-gray-800 dark:focus:bg-blue-900"
         >
             {data.frontmatter.image?.childImageSharp && (
