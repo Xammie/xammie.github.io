@@ -7,7 +7,7 @@ exports.createPages = async ({
 }) => {
     const { data, errors } = await graphql(`
         {
-            blogs: allMdx(sort: { order: ASC, fields: frontmatter___date }) {
+            blogs: allMdx(sort: { frontmatter: { date: ASC } }) {
                 nodes {
                     id
                     frontmatter {

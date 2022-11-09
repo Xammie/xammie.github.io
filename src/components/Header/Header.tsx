@@ -1,6 +1,6 @@
 import React from 'react';
 import Profile from '../Profile';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import Socials from '../Socials';
 import Container from '../Container';
 import { StaticImage } from 'gatsby-plugin-image';

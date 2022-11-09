@@ -1,8 +1,7 @@
 import Profile from '../Profile';
-import EnriseLight from '/src/img/enrise-light.svg';
-import EnriseDark from '/src/img/enrise-dark.svg';
 import React from 'react';
 import Socials from '../Socials';
+import { EnriseDark, EnriseLight } from '../Icons';
 
 export default function Intro({ image }) {
     return (

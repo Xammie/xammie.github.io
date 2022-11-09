@@ -33,9 +33,9 @@ export default function PageHome({ data }: any) {
     );
 }
 
-export const pageQuery = graphql`
+export const query = graphql`
     {
-        blogs: allMdx(sort: { order: DESC, fields: frontmatter___date }) {
+        blogs: allMdx(sort: { frontmatter: { date: DESC } }) {
             ...BlogList
         }
 

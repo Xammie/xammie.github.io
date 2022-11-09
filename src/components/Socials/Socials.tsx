@@ -1,8 +1,8 @@
 import Icon from '../Icon';
-import Github from '/src/img/github.svg';
-import Linkedin from '/src/img/linkedin.svg';
-import Twitter from '/src/img/twitter.svg';
 import React from 'react';
+import { Github } from '../Icons';
+import { Twitter } from '../Icons';
+import { Linkedin } from '../Icons';
 
 export default function Socials() {
     return (

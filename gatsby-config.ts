@@ -21,14 +21,6 @@ const config: GatsbyConfig = {
         },
         'gatsby-plugin-postcss',
         {
-            resolve: 'gatsby-plugin-react-svg',
-            options: {
-                rule: {
-                    include: /img/,
-                },
-            },
-        },
-        {
             resolve: 'gatsby-plugin-manifest',
             options: {
                 name: 'Max Hoogenbosch',
@@ -99,19 +91,19 @@ const config: GatsbyConfig = {
                                 title: node.frontmatter.title,
                                 description: node.excerpt,
                                 date: node.frontmatter.date,
-                                url: `${site.siteMetadata.siteUrl}/blog/${node.slug}`,
-                                guid: `${site.siteMetadata.siteUrl}/blog/${node.slug}`,
+                                url: `${site.siteMetadata.siteUrl}/blog/${node.frontmatter.slug}`,
+                                guid: `${site.siteMetadata.siteUrl}/blog/${node.frontmatter.slug}`,
                             })),
                         query: `
                             {
                                 blogs: allMdx(
-                                    sort: {order: DESC, fields: frontmatter___date}
+                                    sort: {frontmatter: {date: DESC}}
                                 ) {
                                     nodes {
                                         excerpt
-                                        slug
                                         frontmatter {
                                             title
+                                            slug
                                             date
                                         }
                                     }
