@@ -22,15 +22,15 @@ export default function Intro({ image }) {
                         href="https://enrise.com"
                         rel="noopener"
                         aria-label="View website of enrise"
-                        className="clickable mx-1 block h-10 rounded p-2 sm:h-12 md:inline"
+                        className="clickable mx-1 block  rounded p-2 sm:h-12 md:inline"
                     >
                         <EnriseLight
-                            className="dark:hidden"
+                            className="h-8 dark:hidden"
                             width={null}
                             height="100%"
                         />
                         <EnriseDark
-                            className="hidden dark:block"
+                            className="hidden h-8 dark:block"
                             width={null}
                             height="100%"
                         />

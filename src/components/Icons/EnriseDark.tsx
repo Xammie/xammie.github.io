@@ -2,14 +2,7 @@ import React from 'react';
 
 export const EnriseDark = (props) => {
     return (
-        <svg
-            {...props}
-            width="146px"
-            height="48px"
-            viewBox="0 0 146 48"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-            <title>Enrise</title>
+        <svg {...props} viewBox="0 0 146 48" xmlns="http://www.w3.org/2000/svg">
             <g
                 id="Symbols"
                 stroke="none"
